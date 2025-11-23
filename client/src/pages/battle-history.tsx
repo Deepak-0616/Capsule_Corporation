@@ -15,6 +15,7 @@ import trunksZamasu from "@assets/image_1763928173028.png";
 import jirenClash from "@assets/image_1763925714803.png";
 import moroMagic from "@assets/image_1763925784868.png";
 import gasWeapon from "@assets/image_1763925883258.png";
+import gohanCellMax from "@assets/image_1763928344917.png";
 
 const BATTLES = [
   {
@@ -115,6 +116,17 @@ const BATTLES = [
     desc: "True Ultra Instinct and Ultra Ego team up against the strongest warrior in the universe.",
     color: "border-orange-500",
     image: gasWeapon
+  },
+  {
+    id: 10,
+    arc: "Dragon Ball Super: Super Hero",
+    title: "Future Gohan vs Cell Max",
+    year: "Age 782",
+    result: "Victory",
+    powerDiff: "Overwhelming",
+    desc: "The strongest Gohan from the future faces the ultimate bio-engineered android. A battle of transformation and overwhelming power.",
+    color: "border-cyan-500",
+    image: gohanCellMax
   }
 ];
 
