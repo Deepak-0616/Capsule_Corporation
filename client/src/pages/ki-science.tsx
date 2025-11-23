@@ -26,7 +26,7 @@ const TRANSFORMATIONS = [
   {
     id: "ssj2",
     name: "Super Saiyan 2",
-    user: "Goku, Vegeta, Gohan, Majin Buu",
+    user: "Goku, Vegeta, Gohan",
     desc: "An enhanced version of the Super Saiyan form. Multiplies power by 100x. Features electricity arcing around the body and enhanced speed.",
     color: "text-yellow-300",
     border: "border-yellow-300",
