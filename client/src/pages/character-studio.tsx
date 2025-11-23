@@ -10,7 +10,7 @@ import gohanImg from '@assets/image_1763922369472.png';
 import piccoloImg from '@assets/image_1763922313501.png';
 import brolyImg from '@assets/image_1763922890420.png';
 import trunksImg from '@assets/image_1763922459188.png';
-import friezaImg from '@assets/image_1763922088668.png';
+import friezaImg from '@assets/image_1763922965706.png';
 import cellImg from '@assets/image_1763922169800.png';
 import jirenImg from '@assets/image_1763922198924.png';
 import moroImg from '@assets/image_1763921883315.png';
