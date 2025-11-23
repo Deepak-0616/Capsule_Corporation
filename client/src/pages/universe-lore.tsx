@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import gods from "@assets/generated_images/god_of_destruction_and_angel_symbols.png";
+import zeno from "@assets/generated_images/zeno_and_grand_priest.png";
 
 const UNIVERSES = [
   { id: 1, name: "Universe 1", god: "Iwan", angel: "Awamo", rank: "High" },
@@ -35,13 +35,16 @@ export default function UniverseLore() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Visual Chart */}
-        <div className="bg-card rounded-3xl p-8 border-2 border-purple-500/30 flex items-center justify-center relative overflow-hidden">
+        <div className="bg-card rounded-3xl p-8 border-2 border-purple-500/30 flex items-center justify-center relative overflow-hidden group">
           <div className="absolute inset-0 bg-purple-900/10 animate-pulse" />
-          <img src={gods} alt="Gods and Angels" className="relative z-10 max-w-full h-auto drop-shadow-[0_0_25px_rgba(168,85,247,0.5)]" />
+          <img src={zeno} alt="Omni-King Zeno and Grand Priest" className="relative z-10 max-w-full h-auto drop-shadow-[0_0_25px_rgba(168,85,247,0.5)] rounded-lg transition-transform duration-700 group-hover:scale-105" />
+          <div className="absolute bottom-4 left-0 right-0 text-center z-20">
+            <span className="bg-black/80 text-white px-4 py-1 rounded-full text-xs font-mono uppercase">Omni-King Zeno & Grand Priest</span>
+          </div>
         </div>
 
         {/* Data Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full content-start">
           {UNIVERSES.map((u) => (
             <div key={u.id} className="bg-card/50 p-4 rounded-xl border border-border hover:border-primary transition-colors">
               <div className="flex justify-between items-start mb-2">

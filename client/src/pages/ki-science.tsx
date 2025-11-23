@@ -5,8 +5,38 @@ import { Button } from "@/components/ui/button";
 import uiGoku from "@assets/generated_images/ultra_instinct_transformation.png";
 import ueVegeta from "@assets/generated_images/ultra_ego_transformation.png";
 import beastGohan from "@assets/generated_images/dragon_ball_super_hero_gohan_beast.png";
+import ssj from "@assets/generated_images/super_saiyan_transformation.png";
+import ssg from "@assets/generated_images/super_saiyan_god_transformation.png";
+import ssb from "@assets/generated_images/super_saiyan_blue_transformation.png";
 
 const TRANSFORMATIONS = [
+  {
+    id: "ssj",
+    name: "Super Saiyan",
+    user: "Saiyans",
+    desc: "The legendary transformation fueled by rage. Multiplies base power by 50x. Characterized by golden hair and a green-yellow aura.",
+    color: "text-yellow-400",
+    border: "border-yellow-400",
+    image: ssj
+  },
+  {
+    id: "ssg",
+    name: "Super Saiyan God",
+    user: "Goku, Vegeta",
+    desc: "A Saiyan transformation that grants the user God Ki. Requires a ritual of 5 righteous Saiyans or intense divine training. Red hair and flame-like aura.",
+    color: "text-red-400",
+    border: "border-red-400",
+    image: ssg
+  },
+  {
+    id: "ssb",
+    name: "Super Saiyan Blue",
+    user: "Goku, Vegeta",
+    desc: "Super Saiyan God Super Saiyan. Combining the power of Super Saiyan God with the Super Saiyan transformation. Perfect Ki control.",
+    color: "text-blue-500",
+    border: "border-blue-500",
+    image: ssb
+  },
   {
     id: "ui",
     name: "Ultra Instinct",
@@ -33,33 +63,6 @@ const TRANSFORMATIONS = [
     color: "text-red-500",
     border: "border-red-500",
     image: beastGohan
-  },
-  {
-    id: "ssj",
-    name: "Super Saiyan",
-    user: "Saiyans",
-    desc: "The legendary transformation fueled by rage. Multiplies base power by 50x. Characterized by golden hair and a green-yellow aura.",
-    color: "text-yellow-400",
-    border: "border-yellow-400",
-    image: null 
-  },
-  {
-    id: "ssg",
-    name: "Super Saiyan God",
-    user: "Goku, Vegeta",
-    desc: "A Saiyan transformation that grants the user God Ki. Requires a ritual of 5 righteous Saiyans or intense divine training. Red hair and flame-like aura.",
-    color: "text-red-400",
-    border: "border-red-400",
-    image: null
-  },
-  {
-    id: "ssb",
-    name: "Super Saiyan Blue",
-    user: "Goku, Vegeta",
-    desc: "Super Saiyan God Super Saiyan. Combining the power of Super Saiyan God with the Super Saiyan transformation. Perfect Ki control.",
-    color: "text-blue-500",
-    border: "border-blue-500",
-    image: null
   }
 ];
 

@@ -41,12 +41,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </Link>
 
-          {/* Minimal Right Side - No Stats */}
+          {/* Clean Header - No Stats */}
           <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-muted border border-border">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-xs font-mono text-muted-foreground uppercase">SYSTEM ONLINE</span>
-            </div>
+            <Button variant="ghost" size="icon" className="rounded-full">
+               <Menu className="w-5 h-5" />
+            </Button>
           </div>
         </div>
       </header>

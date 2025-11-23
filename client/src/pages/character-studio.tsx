@@ -1,9 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Zap, Shield, Activity, Swords } from 'lucide-react';
+import { ArrowLeft, Zap, Shield, Activity, Swords, FileText, Play } from 'lucide-react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const CHARACTERS = [
   // Z Fighters
@@ -16,7 +23,8 @@ const CHARACTERS = [
     technique: 100,
     desc: "A Saiyan raised on Earth. He constantly strives to be stronger than before, achieving the state of the Gods.",
     color: 'text-goku-orange',
-    border: 'border-goku-orange'
+    border: 'border-goku-orange',
+    log: "Training Log #921: Mastered Emotional Control in UI state. Can now utilize Saiyan emotions alongside divine technique."
   },
   {
     id: 'vegeta',
@@ -27,7 +35,8 @@ const CHARACTERS = [
     technique: 98,
     desc: "The Prince of all Saiyans. Harnesses the power of Destruction to grow stronger with damage taken.",
     color: 'text-vegeta-blue',
-    border: 'border-vegeta-blue'
+    border: 'border-vegeta-blue',
+    log: "Combat Log #440: Damage absorption rate increased by 15%. Hakai energy output stable. Pride absolute."
   },
   {
     id: 'gohan',
@@ -38,7 +47,8 @@ const CHARACTERS = [
     technique: 90,
     desc: "Goku's son with hidden potential that surpasses everyone when unleashed. The Beast has awakened.",
     color: 'text-purple-500',
-    border: 'border-purple-500'
+    border: 'border-purple-500',
+    log: "Research Log #001: The 'Beast' form appears to be an evolution of the Ultimate state, triggered by extreme emotional stress similar to SSJ2."
   },
   {
     id: 'piccolo',
@@ -49,7 +59,8 @@ const CHARACTERS = [
     technique: 100,
     desc: "A Namekian warrior and brilliant strategist. Unlocked his potential with Shenron's help.",
     color: 'text-piccolo-green',
-    border: 'border-piccolo-green'
+    border: 'border-piccolo-green',
+    log: "Meditation Log: The Pride of the Namekians has been restored. Physical strength now matches strategic intellect."
   },
   {
     id: 'broly',
@@ -60,7 +71,8 @@ const CHARACTERS = [
     technique: 70,
     desc: "The Legendary Super Saiyan. His power is infinite and uncontrollable rage incarnate.",
     color: 'text-green-500',
-    border: 'border-green-500'
+    border: 'border-green-500',
+    log: "Observation: Power output rises infinitely during combat. Mental stability is the primary limiting factor."
   },
   {
     id: 'trunks',
@@ -71,7 +83,8 @@ const CHARACTERS = [
     technique: 92,
     desc: "The half-Saiyan from a ruined future. Wields a sword and fights for hope.",
     color: 'text-blue-400',
-    border: 'border-blue-400'
+    border: 'border-blue-400',
+    log: "Time Patroller Report: Timeline stabilized. Sword skills enhanced with Ki channeling."
   },
   // Villains / Antagonists
   {
@@ -83,7 +96,8 @@ const CHARACTERS = [
     technique: 100,
     desc: "The galactic tyrant. Trained for 10 years in a Hyperbolic Time Chamber to surpass the Saiyans.",
     color: 'text-purple-700',
-    border: 'border-purple-700'
+    border: 'border-purple-700',
+    log: "Conquest Log: Saiyans neutralized with single blow. Universe 7 conquest resuming shortly."
   },
   {
     id: 'cell',
@@ -94,7 +108,8 @@ const CHARACTERS = [
     technique: 10,
     desc: "A mindless kaiju version of the perfect android. Pure destruction without intelligence.",
     color: 'text-red-600',
-    border: 'border-red-600'
+    border: 'border-red-600',
+    log: "Error: Mind control chip failed. Subject is berserk. Evacuate immediately."
   },
   {
     id: 'jiren',
@@ -105,7 +120,8 @@ const CHARACTERS = [
     technique: 95,
     desc: "A mortal stronger than a God of Destruction. Believes strength is absolute.",
     color: 'text-red-500',
-    border: 'border-red-500'
+    border: 'border-red-500',
+    log: "Meditation: Trust is unnecessary. Strength is the only truth."
   },
   {
     id: 'moro',
@@ -116,7 +132,8 @@ const CHARACTERS = [
     technique: 99,
     desc: "The Planet Eater. Uses dark magic to drain life energy from entire worlds.",
     color: 'text-blue-900',
-    border: 'border-blue-900'
+    border: 'border-blue-900',
+    log: "Grimoire: Angelic capabilities copied. Stability decreasing. Body cannot contain divine power."
   },
   {
     id: 'gas',
@@ -127,7 +144,8 @@ const CHARACTERS = [
     technique: 95,
     desc: "Wished to be the strongest in the universe, trading his lifespan for power.",
     color: 'text-yellow-700',
-    border: 'border-yellow-700'
+    border: 'border-yellow-700',
+    log: "Heeter Intel: Subject is aging rapidly. Combat effectiveness maximum, but duration limited."
   },
   {
     id: 'buu',
@@ -138,12 +156,15 @@ const CHARACTERS = [
     technique: 80,
     desc: "Pure chaotic evil. Can regenerate from almost anything.",
     color: 'text-pink-500',
-    border: 'border-pink-500'
+    border: 'border-pink-500',
+    log: "Warning: Unpredictable behavior. Do not engage without erasure techniques."
   }
 ];
 
 export default function CharacterStudio() {
   const [selected, setSelected] = useState(CHARACTERS[0]);
+  const [showLog, setShowLog] = useState(false);
+  const [showSim, setShowSim] = useState(false);
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
@@ -221,11 +242,12 @@ export default function CharacterStudio() {
                   </p>
 
                   <div className="grid grid-cols-2 gap-4 pt-4">
-                    <Button className="w-full font-tech" variant="default">
+                    <Button className="w-full font-tech" variant="default" onClick={() => setShowSim(true)}>
                       <Swords className="mr-2 h-4 w-4" />
                       VS Simulation
                     </Button>
-                    <Button variant="outline" className="w-full font-tech">
+                    <Button variant="outline" className="w-full font-tech" onClick={() => setShowLog(true)}>
+                      <FileText className="mr-2 h-4 w-4" />
                       Data Log
                     </Button>
                   </div>
@@ -264,6 +286,58 @@ export default function CharacterStudio() {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* Data Log Dialog */}
+      <Dialog open={showLog} onOpenChange={setShowLog}>
+        <DialogContent className="bg-card border-2 border-border font-ui">
+            <DialogHeader>
+                <DialogTitle className="font-tech text-primary uppercase">Encrypted Data Log</DialogTitle>
+                <DialogDescription>Accessing {selected.name} private records...</DialogDescription>
+            </DialogHeader>
+            <div className="p-4 bg-black/20 rounded border border-white/10 font-mono text-sm text-green-400">
+                {">"} {selected.log}
+                <span className="animate-pulse inline-block w-2 h-4 bg-green-400 ml-1 align-middle"></span>
+            </div>
+        </DialogContent>
+      </Dialog>
+
+       {/* VS Simulation Dialog */}
+       <Dialog open={showSim} onOpenChange={setShowSim}>
+        <DialogContent className="bg-card border-2 border-border font-ui max-w-2xl">
+            <DialogHeader>
+                <DialogTitle className="font-tech text-red-500 uppercase">Battle Simulation</DialogTitle>
+                <DialogDescription>Running combat scenario against Black Frieza (Baseline)...</DialogDescription>
+            </DialogHeader>
+            <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                    <div className="text-center">
+                        <div className={`w-16 h-16 rounded-full border-2 ${selected.border} flex items-center justify-center text-2xl mb-2 mx-auto`}>
+                            {selected.name[0]}
+                        </div>
+                        <p className="font-bold">{selected.name}</p>
+                    </div>
+                    <div className="text-2xl font-black text-red-500 animate-pulse">VS</div>
+                    <div className="text-center">
+                        <div className="w-16 h-16 rounded-full border-2 border-purple-700 bg-purple-900/20 flex items-center justify-center text-2xl mb-2 mx-auto">
+                            F
+                        </div>
+                        <p className="font-bold">Black Frieza</p>
+                    </div>
+                </div>
+                
+                <div className="p-4 bg-black/40 rounded border border-red-500/30">
+                    <div className="space-y-2 font-mono text-xs">
+                        <p className="text-gray-400">Calculating power vectors...</p>
+                        <div className="h-1 bg-gray-700 rounded overflow-hidden">
+                            <div className="h-full bg-red-500 animate-[progress_2s_ease-in-out_infinite] w-full origin-left scale-x-0" />
+                        </div>
+                        <p className="text-white">Result Prediction: {selected.power >= 100 ? "UNCERTAIN - CLASH IMMINENT" : "DEFEAT LIKELY - POWER GAP DETECTED"}</p>
+                    </div>
+                </div>
+            </div>
+        </DialogContent>
+      </Dialog>
+
     </div>
   );
 }

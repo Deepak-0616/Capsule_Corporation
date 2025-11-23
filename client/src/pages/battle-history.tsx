@@ -9,6 +9,12 @@ import brolyPower from "@assets/generated_images/broly_legendary_power.png";
 import moroMagic from "@assets/generated_images/moro_dark_magic.png";
 import gasWeapon from "@assets/generated_images/gas_heeter_energy_weapons.png";
 
+// New Images
+import saiyanClash from "@assets/generated_images/goku_vs_vegeta_beam_struggle_manga.png";
+import namekClash from "@assets/generated_images/goku_vs_frieza_namek_manga.png";
+import cellClash from "@assets/generated_images/gohan_vs_cell_kamehameha_manga.png";
+import buuClash from "@assets/generated_images/vegito_vs_buu_manga.png";
+
 const BATTLES = [
   {
     id: 1,
@@ -19,7 +25,7 @@ const BATTLES = [
     powerDiff: "Equal",
     desc: "The first fateful encounter between the low-class warrior and the Prince of Saiyans. Kaioken x4 vs Galick Gun.",
     color: "border-red-500",
-    image: null
+    image: saiyanClash
   },
   {
     id: 2,
@@ -30,7 +36,7 @@ const BATTLES = [
     powerDiff: "Massive",
     desc: "On a dying Namek, Goku awakens the legendary Super Saiyan form fueled by rage over Krillin's death.",
     color: "border-energy-yellow",
-    image: null
+    image: namekClash
   },
   {
     id: 3,
@@ -41,7 +47,7 @@ const BATTLES = [
     powerDiff: "Overwhelming",
     desc: "The torch is passed. Gohan ascends beyond a Super Saiyan to defeat the perfect biological android.",
     color: "border-purple-500",
-    image: null
+    image: cellClash
   },
   {
     id: 4,
@@ -52,7 +58,7 @@ const BATTLES = [
     powerDiff: "Godly",
     desc: "The fusion of Goku and Vegeta creates the ultimate warrior, toying with the most dangerous threat in the universe.",
     color: "border-blue-500",
-    image: null
+    image: buuClash
   },
   {
     id: 5,
@@ -138,7 +144,7 @@ export default function BattleHistory() {
                 `}>
                   {/* Background Image */}
                   <div 
-                    className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500 bg-cover bg-center"
+                    className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500 bg-cover bg-center"
                     style={{ backgroundImage: `url(${battle.image || auraBg})` }}
                   />
                   {/* Dark overlay for readability */}

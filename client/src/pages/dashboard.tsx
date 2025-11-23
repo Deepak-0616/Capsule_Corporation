@@ -12,6 +12,12 @@ import {
 import techBg from "@assets/generated_images/futuristic_anime_lab_background_texture.png";
 import auraBg from "@assets/generated_images/dragon_ball_style_energy_aura_background.png";
 import toriyamaArt from "@assets/generated_images/akira_toriyama_tribute_art.png";
+import radarImg from "@assets/generated_images/dragon_radar_anime_style.png";
+import gokuVsVegeta from "@assets/generated_images/goku_vs_vegeta_beam_struggle_manga.png";
+import uiGoku from "@assets/generated_images/ultra_instinct_transformation.png";
+import zeno from "@assets/generated_images/zeno_and_grand_priest.png";
+import gokuEating from "@assets/generated_images/goku_eating_ramen.png";
+import characterGroup from "@assets/generated_images/goku_vs_jiren_clash.png"; // Reusing for hover
 
 const SECTIONS = [
   {
@@ -24,7 +30,7 @@ const SECTIONS = [
     border: "border-vegeta-blue/30",
     link: "/tech",
     desc: "Explore Dragon Radars, Hoi-Poi Capsules, and Saiyan Space Pods.",
-    image: techBg
+    image: radarImg
   },
   {
     id: "battle",
@@ -36,7 +42,7 @@ const SECTIONS = [
     border: "border-goku-orange/30",
     link: "/battle",
     desc: "Relive the most iconic fights from the Saiyan Saga to the Tournament of Power.",
-    image: auraBg
+    image: gokuVsVegeta
   },
   {
     id: "ki",
@@ -47,7 +53,8 @@ const SECTIONS = [
     bg: "bg-yellow-500/10",
     border: "border-energy-yellow/30",
     link: "/ki",
-    desc: "Analyze energy readings, transformations, and fusion techniques."
+    desc: "Analyze energy readings, transformations, and fusion techniques.",
+    image: uiGoku
   },
   {
     id: "lore",
@@ -58,7 +65,8 @@ const SECTIONS = [
     bg: "bg-green-500/10",
     border: "border-piccolo-green/30",
     link: "/lore",
-    desc: "Map of the 12 Universes, Namekian history, and the Dragon Balls."
+    desc: "Map of the 12 Universes, Namekian history, and the Dragon Balls.",
+    image: zeno
   },
   {
     id: "chars",
@@ -69,7 +77,8 @@ const SECTIONS = [
     bg: "bg-red-600/10",
     border: "border-red-600/30",
     link: "/chars",
-    desc: "Deep dive into stats, forms, and power levels."
+    desc: "Deep dive into stats, forms, and power levels.",
+    image: characterGroup
   },
   {
     id: "fun",
@@ -80,7 +89,8 @@ const SECTIONS = [
     bg: "bg-purple-500/10",
     border: "border-purple-500/30",
     link: "/fun",
-    desc: "Mini-games, quizzes, and interactive fun."
+    desc: "Mini-games, quizzes, and interactive fun.",
+    image: gokuEating
   },
   {
     id: "tribute",
@@ -146,13 +156,14 @@ export default function Dashboard() {
                 ${section.border}
               `}
             >
-              {/* Background Image (Optional) */}
+              {/* Background Image */}
               {section.image && (
                 <div 
-                  className="absolute inset-0 z-0 opacity-0 group-hover:opacity-40 transition-opacity duration-500 bg-cover bg-center mix-blend-overlay"
+                  className="absolute inset-0 z-0 opacity-20 group-hover:opacity-60 transition-opacity duration-500 bg-cover bg-center grayscale group-hover:grayscale-0"
                   style={{ backgroundImage: `url(${section.image})` }}
                 />
               )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
               {/* Background decorative icon */}
               <section.icon 
@@ -175,14 +186,11 @@ export default function Dashboard() {
                   {section.title}
                 </h3>
                 <div className="h-1 w-12 bg-gradient-to-r from-current to-transparent opacity-50" />
-                <p className="font-ui text-sm text-muted-foreground line-clamp-2 group-hover:text-foreground transition-colors">
+                <p className="font-ui text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   {section.desc}
                 </p>
               </div>
 
-              {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-              
               {/* Active Indicator */}
               <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${section.color.replace('text-', '')} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
             </motion.div>

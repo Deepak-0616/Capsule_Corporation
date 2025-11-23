@@ -4,9 +4,9 @@ import { Link } from "wouter";
 import { ArrowLeft, Info, ShieldCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import dragonRadar from "@assets/generated_images/dragon_ball_radar_schematic.png";
-import capsule from "@assets/generated_images/hoi_poi_capsule_schematic.png";
-import scouter from "@assets/generated_images/saiyan_scouter_schematic.png";
+import dragonRadar from "@assets/generated_images/dragon_radar_anime_style.png";
+import capsule from "@assets/generated_images/hoi_poi_capsule_schematic.png"; // Keeping schematic for this one as it looks techy
+import scouter from "@assets/generated_images/saiyan_scouter_anime_style.png";
 
 const ITEMS = [
   {
@@ -79,7 +79,7 @@ export default function TechVault() {
             >
               <div className="flex items-center gap-4 relative z-10">
                 <div className={`w-12 h-12 rounded-lg border ${item.border} bg-black/50 flex items-center justify-center overflow-hidden`}>
-                  <img src={item.image} alt={item.name} className="w-full h-full object-cover opacity-80" />
+                  <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h3 className="font-tech font-bold text-lg">{item.name}</h3>
