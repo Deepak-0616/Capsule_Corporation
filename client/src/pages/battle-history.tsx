@@ -16,6 +16,7 @@ import jirenClash from "@assets/image_1763925714803.png";
 import moroMagic from "@assets/image_1763925784868.png";
 import gasWeapon from "@assets/image_1763925883258.png";
 import gohanCellMax from "@assets/image_1763928344917.png";
+import gokuUIClash from "@assets/image_1763929075532.png";
 
 const BATTLES = [
   {
@@ -127,6 +128,17 @@ const BATTLES = [
     desc: "The strongest Gohan from the future faces the ultimate bio-engineered android. A battle of transformation and overwhelming power.",
     color: "border-cyan-500",
     image: gohanCellMax
+  },
+  {
+    id: 11,
+    arc: "Tournament of Power",
+    title: "Goku vs Ultra Instinct",
+    year: "Age 780",
+    result: "Victory",
+    powerDiff: "Transcendent",
+    desc: "The climactic moment when Goku achieves the ultimate state, breaking his limits in the World of Void.",
+    color: "border-violet-500",
+    image: gokuUIClash
   }
 ];
 
