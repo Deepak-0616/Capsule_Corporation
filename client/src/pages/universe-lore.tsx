@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import zeno from "@assets/generated_images/zeno_and_grand_priest.png";
+import zeno from "@assets/image_1763926561461.png";
 
 const UNIVERSES = [
   { id: 1, name: "Universe 1", god: "Iwan", angel: "Awamo", rank: "High" },
