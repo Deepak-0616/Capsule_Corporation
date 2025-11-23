@@ -11,7 +11,7 @@ import piccoloImg from '@assets/generated_images/piccolo_orange_accurate.png';
 import brolyImg from '@assets/generated_images/broly_ssj_accurate.png';
 import trunksImg from '@assets/generated_images/trunks_ssj_rage_accurate.png';
 import friezaImg from '@assets/image_1763922088668.png';
-import cellImg from '@assets/generated_images/cell_max_accurate.png';
+import cellImg from '@assets/image_1763922169800.png';
 import jirenImg from '@assets/generated_images/jiren_accurate.png';
 import moroImg from '@assets/image_1763921883315.png';
 import gasImg from '@assets/image_1763921774297.png';
