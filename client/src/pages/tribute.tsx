@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portrait from "@assets/generated_images/akira_toriyama_portrait_sketch.png";
+import portrait from "@assets/generated_images/akira_toriyama_real_photo.png";
 
 export default function Tribute() {
   return (
