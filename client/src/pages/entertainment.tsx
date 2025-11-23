@@ -5,6 +5,7 @@ import gokuEating from "@assets/generated_images/goku_eating_ramen.png";
 import roshiHouse from "@assets/generated_images/master_roshi_kame_house.png";
 import friezaForms from "@assets/image_1763928552053.png";
 import launchChar from "@assets/image_1763928603801.png";
+import piccoloGohan from "@assets/image_1763928712992.png";
 
 const FACTS = [
   {
@@ -19,7 +20,7 @@ const FACTS = [
     title: "Piccolo's Age",
     text: "Piccolo is technically only 4 years older than Gohan due to Namekian aging mechanics.",
     icon: "🐌",
-    image: null
+    image: piccoloGohan
   },
   {
     id: 3,
