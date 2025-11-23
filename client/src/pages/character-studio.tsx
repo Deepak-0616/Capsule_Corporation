@@ -186,7 +186,7 @@ const CHARACTERS = [
 ];
 
 export default function CharacterStudio() {
-  const [selected, setSelected] = useState(CHARACTERS[0]);
+  const [selected, setSelected] = useState<typeof CHARACTERS[0] | null>(null);
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
@@ -204,16 +204,16 @@ export default function CharacterStudio() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="space-y-6">
         {/* Character List */}
-        <div className="space-y-4 h-[600px] overflow-y-auto pr-2">
+        <div className="space-y-4">
           {CHARACTERS.map((char) => (
             <div
               key={char.id}
               onClick={() => setSelected(char)}
               className={`
                 cursor-pointer p-4 rounded-xl border-2 transition-all hover:scale-105
-                ${selected.id === char.id 
+                ${selected?.id === char.id 
                   ? `${char.border} bg-muted` 
                   : 'border-transparent bg-card hover:border-muted-foreground/30'}
               `}
@@ -223,22 +223,22 @@ export default function CharacterStudio() {
                   <h3 className="font-tech font-bold text-lg">{char.name}</h3>
                   <p className="text-xs font-mono text-muted-foreground uppercase">{char.form}</p>
                 </div>
-                <ChevronDown className={`w-5 h-5 transition-transform ${selected.id === char.id ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-5 h-5 transition-transform ${selected?.id === char.id ? 'rotate-180' : ''}`} />
               </div>
             </div>
           ))}
         </div>
 
-        {/* Character Detail Card */}
-        <div className="lg:col-span-2">
-          <AnimatePresence mode="wait">
+        {/* Character Detail Card - Shows below when selected */}
+        <AnimatePresence>
+          {selected && (
             <motion.div
               key={selected.id}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="bg-card rounded-3xl border-2 border-border shadow-2xl relative overflow-hidden h-full flex flex-col"
+              className="bg-card rounded-3xl border-2 border-border shadow-2xl relative overflow-hidden flex flex-col"
             >
               {/* Character Image Container */}
               <div className="relative w-full h-64 overflow-hidden bg-gradient-to-b from-muted/50 to-card flex items-center justify-center border-b border-border">
@@ -254,21 +254,19 @@ export default function CharacterStudio() {
               </div>
 
               {/* Info Section */}
-              <div className="flex-1 p-8 flex flex-col justify-between">
-                <div className="space-y-6">
-                  <div>
-                    <h2 className={`text-4xl font-action mb-2 ${selected.color} text-stroke-sm text-transparent bg-clip-text bg-gradient-to-br from-current to-foreground`}>
-                      {selected.name}
-                    </h2>
-                    <span className="inline-block px-3 py-1 rounded-full bg-muted text-xs font-mono uppercase tracking-wider border border-white/10">
-                      {selected.form}
-                    </span>
-                  </div>
-                  
-                  <p className="font-ui text-sm leading-relaxed text-muted-foreground">
-                    {selected.desc}
-                  </p>
+              <div className="p-8 space-y-6">
+                <div>
+                  <h2 className={`text-4xl font-action mb-2 ${selected.color} text-stroke-sm text-transparent bg-clip-text bg-gradient-to-br from-current to-foreground`}>
+                    {selected.name}
+                  </h2>
+                  <span className="inline-block px-3 py-1 rounded-full bg-muted text-xs font-mono uppercase tracking-wider border border-white/10">
+                    {selected.form}
+                  </span>
                 </div>
+                
+                <p className="font-ui text-sm leading-relaxed text-muted-foreground">
+                  {selected.desc}
+                </p>
 
                 {/* Stats Section */}
                 <div className="space-y-6 pt-6 border-t border-border/50">
@@ -300,8 +298,8 @@ export default function CharacterStudio() {
                 </div>
               </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
