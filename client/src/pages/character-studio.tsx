@@ -11,6 +11,18 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import gokuImg from '@assets/generated_images/goku_ultra_instinct_portrait.png';
+import vegetaImg from '@assets/generated_images/vegeta_ultra_ego_portrait.png';
+import gohanImg from '@assets/generated_images/gohan_beast_portrait.png';
+import piccoloImg from '@assets/generated_images/piccolo_orange_portrait.png';
+import brolyImg from '@assets/generated_images/broly_ssj_portrait.png';
+import trunksImg from '@assets/generated_images/trunks_ssj_rage_portrait.png';
+import friezaImg from '@assets/generated_images/frieza_black_portrait.png';
+import cellImg from '@assets/generated_images/cell_max_portrait.png';
+import jirenImg from '@assets/generated_images/jiren_full_power_portrait.png';
+import moroImg from '@assets/generated_images/moro_angel_portrait.png';
+import gasImg from '@assets/generated_images/gas_powered_portrait.png';
+import buuImg from '@assets/generated_images/kid_buu_portrait.png';
 
 const CHARACTERS = [
   // Z Fighters
@@ -24,6 +36,7 @@ const CHARACTERS = [
     desc: "A Saiyan raised on Earth. He constantly strives to be stronger than before, achieving the state of the Gods.",
     color: 'text-goku-orange',
     border: 'border-goku-orange',
+    image: gokuImg,
     log: "Training Log #921: Mastered Emotional Control in UI state. Can now utilize Saiyan emotions alongside divine technique."
   },
   {
@@ -36,6 +49,7 @@ const CHARACTERS = [
     desc: "The Prince of all Saiyans. Harnesses the power of Destruction to grow stronger with damage taken.",
     color: 'text-vegeta-blue',
     border: 'border-vegeta-blue',
+    image: vegetaImg,
     log: "Combat Log #440: Damage absorption rate increased by 15%. Hakai energy output stable. Pride absolute."
   },
   {
@@ -48,6 +62,7 @@ const CHARACTERS = [
     desc: "Goku's son with hidden potential that surpasses everyone when unleashed. The Beast has awakened.",
     color: 'text-purple-500',
     border: 'border-purple-500',
+    image: gohanImg,
     log: "Research Log #001: The 'Beast' form appears to be an evolution of the Ultimate state, triggered by extreme emotional stress similar to SSJ2."
   },
   {
@@ -60,6 +75,7 @@ const CHARACTERS = [
     desc: "A Namekian warrior and brilliant strategist. Unlocked his potential with Shenron's help.",
     color: 'text-piccolo-green',
     border: 'border-piccolo-green',
+    image: piccoloImg,
     log: "Meditation Log: The Pride of the Namekians has been restored. Physical strength now matches strategic intellect."
   },
   {
@@ -72,6 +88,7 @@ const CHARACTERS = [
     desc: "The Legendary Super Saiyan. His power is infinite and uncontrollable rage incarnate.",
     color: 'text-green-500',
     border: 'border-green-500',
+    image: brolyImg,
     log: "Observation: Power output rises infinitely during combat. Mental stability is the primary limiting factor."
   },
   {
@@ -84,6 +101,7 @@ const CHARACTERS = [
     desc: "The half-Saiyan from a ruined future. Wields a sword and fights for hope.",
     color: 'text-blue-400',
     border: 'border-blue-400',
+    image: trunksImg,
     log: "Time Patroller Report: Timeline stabilized. Sword skills enhanced with Ki channeling."
   },
   // Villains / Antagonists
@@ -97,6 +115,7 @@ const CHARACTERS = [
     desc: "The galactic tyrant. Trained for 10 years in a Hyperbolic Time Chamber to surpass the Saiyans.",
     color: 'text-purple-700',
     border: 'border-purple-700',
+    image: friezaImg,
     log: "Conquest Log: Saiyans neutralized with single blow. Universe 7 conquest resuming shortly."
   },
   {
@@ -109,6 +128,7 @@ const CHARACTERS = [
     desc: "A mindless kaiju version of the perfect android. Pure destruction without intelligence.",
     color: 'text-red-600',
     border: 'border-red-600',
+    image: cellImg,
     log: "Error: Mind control chip failed. Subject is berserk. Evacuate immediately."
   },
   {
@@ -121,6 +141,7 @@ const CHARACTERS = [
     desc: "A mortal stronger than a God of Destruction. Believes strength is absolute.",
     color: 'text-red-500',
     border: 'border-red-500',
+    image: jirenImg,
     log: "Meditation: Trust is unnecessary. Strength is the only truth."
   },
   {
@@ -133,6 +154,7 @@ const CHARACTERS = [
     desc: "The Planet Eater. Uses dark magic to drain life energy from entire worlds.",
     color: 'text-blue-900',
     border: 'border-blue-900',
+    image: moroImg,
     log: "Grimoire: Angelic capabilities copied. Stability decreasing. Body cannot contain divine power."
   },
   {
@@ -145,6 +167,7 @@ const CHARACTERS = [
     desc: "Wished to be the strongest in the universe, trading his lifespan for power.",
     color: 'text-yellow-700',
     border: 'border-yellow-700',
+    image: gasImg,
     log: "Heeter Intel: Subject is aging rapidly. Combat effectiveness maximum, but duration limited."
   },
   {
@@ -157,6 +180,7 @@ const CHARACTERS = [
     desc: "Pure chaotic evil. Can regenerate from almost anything.",
     color: 'text-pink-500',
     border: 'border-pink-500',
+    image: buuImg,
     log: "Warning: Unpredictable behavior. Do not engage without erasure techniques."
   }
 ];
@@ -218,18 +242,26 @@ export default function CharacterStudio() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="bg-card rounded-3xl border-2 border-border p-8 shadow-2xl relative overflow-hidden h-full"
+              className="bg-card rounded-3xl border-2 border-border shadow-2xl relative overflow-hidden h-full flex flex-col"
             >
-              {/* Background decorative text */}
-              <span className="absolute -right-10 -top-10 text-9xl font-tech font-black text-muted/10 pointer-events-none select-none uppercase truncate max-w-[150%]">
-                {selected.id}
-              </span>
+              {/* Character Image Container */}
+              <div className="relative w-full h-64 overflow-hidden bg-gradient-to-b from-muted/50 to-card flex items-center justify-center border-b border-border">
+                <img 
+                  src={selected.image} 
+                  alt={selected.name}
+                  className="h-full w-full object-cover opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                <span className="absolute -right-10 -top-10 text-6xl font-tech font-black text-muted/5 pointer-events-none select-none uppercase">
+                  {selected.id}
+                </span>
+              </div>
 
-              <div className="relative z-10 grid md:grid-cols-2 gap-8 h-full content-start">
-                {/* Left: Info */}
+              {/* Info Section */}
+              <div className="flex-1 p-8 flex flex-col justify-between">
                 <div className="space-y-6">
                   <div>
-                    <h2 className={`text-5xl font-action mb-2 ${selected.color} text-stroke-sm text-transparent bg-clip-text bg-gradient-to-br from-current to-foreground`}>
+                    <h2 className={`text-4xl font-action mb-2 ${selected.color} text-stroke-sm text-transparent bg-clip-text bg-gradient-to-br from-current to-foreground`}>
                       {selected.name}
                     </h2>
                     <span className="inline-block px-3 py-1 rounded-full bg-muted text-xs font-mono uppercase tracking-wider border border-white/10">
@@ -237,48 +269,48 @@ export default function CharacterStudio() {
                     </span>
                   </div>
                   
-                  <p className="font-ui text-lg leading-relaxed text-muted-foreground">
+                  <p className="font-ui text-sm leading-relaxed text-muted-foreground">
                     {selected.desc}
                   </p>
-
-                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    <Button className="w-full font-tech" variant="default" onClick={() => setShowSim(true)}>
-                      <Swords className="mr-2 h-4 w-4" />
-                      VS Simulation
-                    </Button>
-                    <Button variant="outline" className="w-full font-tech" onClick={() => setShowLog(true)}>
-                      <FileText className="mr-2 h-4 w-4" />
-                      Data Log
-                    </Button>
-                  </div>
                 </div>
 
-                {/* Right: Stats */}
-                <div className="bg-muted/20 rounded-2xl p-6 space-y-6 border border-border/50 backdrop-blur-sm">
-                  <h3 className="font-tech text-xl border-b pb-2 mb-4">Combat Data</h3>
-                  
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm font-bold uppercase">
-                      <span className="flex items-center gap-2"><Zap className="w-4 h-4 text-energy-yellow" /> Power</span>
-                      <span className="font-mono">{selected.power}</span>
+                {/* Stats Section */}
+                <div className="space-y-6 pt-6 border-t border-border/50">
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-xs font-bold uppercase">
+                        <span className="flex items-center gap-1"><Zap className="w-3 h-3 text-energy-yellow" /> Power</span>
+                        <span className="font-mono">{selected.power}</span>
+                      </div>
+                      <Progress value={selected.power} className="h-1" indicatorClassName="bg-energy-yellow" />
                     </div>
-                    <Progress value={selected.power} className="h-2" indicatorClassName="bg-energy-yellow" />
+
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-xs font-bold uppercase">
+                        <span className="flex items-center gap-1"><Activity className="w-3 h-3 text-blue-500" /> Speed</span>
+                        <span className="font-mono">{selected.speed}</span>
+                      </div>
+                      <Progress value={selected.speed} className="h-1" indicatorClassName="bg-blue-500" />
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-xs font-bold uppercase">
+                        <span className="flex items-center gap-1"><Shield className="w-3 h-3 text-green-500" /> Technique</span>
+                        <span className="font-mono">{selected.technique}</span>
+                      </div>
+                      <Progress value={selected.technique} className="h-1" indicatorClassName="bg-green-500" />
+                    </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm font-bold uppercase">
-                      <span className="flex items-center gap-2"><Activity className="w-4 h-4 text-blue-500" /> Speed</span>
-                      <span className="font-mono">{selected.speed}</span>
-                    </div>
-                    <Progress value={selected.speed} className="h-2" indicatorClassName="bg-blue-500" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm font-bold uppercase">
-                      <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-green-500" /> Technique</span>
-                      <span className="font-mono">{selected.technique}</span>
-                    </div>
-                    <Progress value={selected.technique} className="h-2" indicatorClassName="bg-green-500" />
+                  <div className="grid grid-cols-2 gap-4 pt-2">
+                    <Button className="w-full font-tech text-xs" variant="default" onClick={() => setShowSim(true)}>
+                      <Swords className="mr-2 h-3 w-3" />
+                      VS Simulation
+                    </Button>
+                    <Button variant="outline" className="w-full font-tech text-xs" onClick={() => setShowLog(true)}>
+                      <FileText className="mr-2 h-3 w-3" />
+                      Data Log
+                    </Button>
                   </div>
                 </div>
               </div>
