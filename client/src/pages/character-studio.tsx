@@ -8,7 +8,7 @@ import gokuImg from '@assets/image_1763922568064.png';
 import vegetaImg from '@assets/image_1763922684293.png';
 import gohanImg from '@assets/image_1763922369472.png';
 import piccoloImg from '@assets/image_1763922313501.png';
-import brolyImg from '@assets/generated_images/broly_ssj_accurate.png';
+import brolyImg from '@assets/image_1763922735201.png';
 import trunksImg from '@assets/image_1763922459188.png';
 import friezaImg from '@assets/image_1763922088668.png';
 import cellImg from '@assets/image_1763922169800.png';
