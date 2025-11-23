@@ -7,13 +7,13 @@ import blackFrieza from "@assets/generated_images/black_frieza_silhouette.png";
 import brolyPower from "@assets/generated_images/broly_legendary_power.png";
 
 // Authentic Anime/Manga Battle Images
-import saiyanClash from "@assets/stock_images/saiyan_saga_goku_veg_2ca07252.jpg";
+import saiyanClash from "@assets/image_1763925498950.png";
 import namekClash from "@assets/generated_images/goku_vs_frieza_namek_manga.png";
 import cellClash from "@assets/generated_images/gohan_vs_cell_kamehameha_manga.png";
-import buuClash from "@assets/stock_images/vegito_super_saiyan__d0db9ccb.jpg";
-import jirenClash from "@assets/stock_images/ultra_instinct_goku__f3da83e3.jpg";
-import moroMagic from "@assets/stock_images/goku_master_ultra_in_f8a4b2ef.jpg";
-import gasWeapon from "@assets/stock_images/vegeta_ultra_ego_gok_6408292c.jpg";
+import buuClash from "@assets/image_1763925555063.png";
+import jirenClash from "@assets/image_1763925714803.png";
+import moroMagic from "@assets/image_1763925784868.png";
+import gasWeapon from "@assets/image_1763925883258.png";
 
 const BATTLES = [
   {
