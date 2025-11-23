@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { useUserStore } from "@/lib/store";
 import { Zap, User, Shield, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Starfield } from "@/components/layout/Background";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +16,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
-      {/* Background Grid Overlay */}
+      {/* Animated Backgrounds */}
+      <Starfield />
       <div className="fixed inset-0 pointer-events-none z-0 grid-lines opacity-40" />
       
       {/* Header */}
