@@ -1,9 +1,15 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Zap, Shield, Activity } from 'lucide-react';
+import { ArrowLeft, Zap, Shield, Activity, ChevronDown } from 'lucide-react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@/components/ui/accordion';
 import gokuImg from '@assets/image_1763922568064.png';
 import vegetaImg from '@assets/image_1763922684293.png';
 import gohanImg from '@assets/image_1763922369472.png';
@@ -199,25 +205,54 @@ export default function CharacterStudio() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Character List */}
-        <div className="space-y-4 h-[600px] overflow-y-auto pr-2">
-          {CHARACTERS.map((char) => (
-            <div
-              key={char.id}
-              onClick={() => setSelected(char)}
-              className={`
-                cursor-pointer p-4 rounded-xl border-2 transition-all hover:scale-105
-                ${selected.id === char.id 
-                  ? `${char.border} bg-muted` 
-                  : 'border-transparent bg-card hover:border-muted-foreground/30'}
-              `}
-            >
-              <div>
-                <h3 className="font-tech font-bold text-lg">{char.name}</h3>
-                <p className="text-xs font-mono text-muted-foreground uppercase">{char.form}</p>
-              </div>
-            </div>
-          ))}
+        {/* Character List - Accordion */}
+        <div className="h-[600px] overflow-y-auto pr-2">
+          <Accordion type="single" collapsible className="space-y-2">
+            {CHARACTERS.map((char) => (
+              <AccordionItem 
+                key={char.id} 
+                value={char.id}
+                className={`border-2 rounded-xl transition-all ${selected.id === char.id ? `${char.border} bg-muted` : 'border-border bg-card'}`}
+              >
+                <AccordionTrigger 
+                  onClick={() => setSelected(char)}
+                  className="hover:no-underline px-4 py-3 font-tech font-bold text-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="text-left">
+                    <h3 className="font-tech font-bold text-lg">{char.name}</h3>
+                    <p className="text-xs font-mono text-muted-foreground uppercase">{char.form}</p>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 py-4 space-y-4">
+                  <div className="grid grid-cols-1 gap-3">
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-bold uppercase">
+                        <span className="flex items-center gap-1"><Zap className="w-3 h-3 text-energy-yellow" /> Power</span>
+                        <span className="font-mono">{char.power}</span>
+                      </div>
+                      <Progress value={char.power} className="h-1" indicatorClassName="bg-energy-yellow" />
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-bold uppercase">
+                        <span className="flex items-center gap-1"><Activity className="w-3 h-3 text-blue-500" /> Speed</span>
+                        <span className="font-mono">{char.speed}</span>
+                      </div>
+                      <Progress value={char.speed} className="h-1" indicatorClassName="bg-blue-500" />
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-bold uppercase">
+                        <span className="flex items-center gap-1"><Shield className="w-3 h-3 text-green-500" /> Technique</span>
+                        <span className="font-mono">{char.technique}</span>
+                      </div>
+                      <Progress value={char.technique} className="h-1" indicatorClassName="bg-green-500" />
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
 
         {/* Character Detail Card */}
