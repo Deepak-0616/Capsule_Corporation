@@ -198,7 +198,7 @@ export default function CharacterStudio() {
             </Button>
           </Link>
           <div>
-            <h1 className="text-3xl font-tech uppercase">Character Studio</h1>
+            <h1 className="text-3xl font-tech uppercase text-goku-orange">Character Studio</h1>
             <p className="text-muted-foreground font-ui">Z Fighters & Villains Database</p>
           </div>
         </div>
