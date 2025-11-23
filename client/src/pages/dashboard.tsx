@@ -15,7 +15,7 @@ import toriyamaArt from "@assets/generated_images/akira_toriyama_tribute_art.png
 import radarImg from "@assets/generated_images/dragon_radar_anime_style.png";
 import gokuVsVegeta from "@assets/generated_images/goku_vs_vegeta_beam_struggle_manga.png";
 import uiGoku from "@assets/image_1763926381541.png";
-import zeno from "@assets/generated_images/zeno_and_grand_priest.png";
+import zeno from "@assets/image_1763926470664.png";
 import gokuEating from "@assets/generated_images/goku_eating_ramen.png";
 import characterGroup from "@assets/generated_images/goku_vs_jiren_clash.png"; // Reusing for hover
 
