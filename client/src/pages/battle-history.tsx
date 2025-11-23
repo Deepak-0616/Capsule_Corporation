@@ -11,6 +11,7 @@ import saiyanClash from "@assets/image_1763925498950.png";
 import namekClash from "@assets/generated_images/goku_vs_frieza_namek_manga.png";
 import cellClash from "@assets/generated_images/gohan_vs_cell_kamehameha_manga.png";
 import buuClash from "@assets/image_1763925555063.png";
+import trunksZamasu from "@assets/image_1763928173028.png";
 import jirenClash from "@assets/image_1763925714803.png";
 import moroMagic from "@assets/image_1763925784868.png";
 import gasWeapon from "@assets/image_1763925883258.png";
@@ -62,6 +63,17 @@ const BATTLES = [
   },
   {
     id: 5,
+    arc: "Goku Black Saga",
+    title: "Future Trunks vs Zamasu",
+    year: "Age 796",
+    result: "Pyrrhic",
+    powerDiff: "Divine",
+    desc: "The strongest warrior of the future battles an immortal god. Super Saiyan Rage Trunks unleashes the Spirit Bomb to end the multiverse threat.",
+    color: "border-pink-500",
+    image: trunksZamasu
+  },
+  {
+    id: 6,
     arc: "ToP Saga",
     title: "Goku vs Jiren",
     year: "Age 780",
@@ -72,7 +84,7 @@ const BATTLES = [
     image: jirenClash
   },
   {
-    id: 6,
+    id: 7,
     arc: "Broly Saga",
     title: "Gogeta vs Broly",
     year: "Age 780",
@@ -83,7 +95,7 @@ const BATTLES = [
     image: brolyPower
   },
   {
-    id: 7,
+    id: 8,
     arc: "Moro Saga",
     title: "Goku vs Moro",
     year: "Age 781",
@@ -94,7 +106,7 @@ const BATTLES = [
     image: moroMagic
   },
   {
-    id: 8,
+    id: 9,
     arc: "Granolah Saga",
     title: "Goku & Vegeta vs Gas",
     year: "Age 781",
