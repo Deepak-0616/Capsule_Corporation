@@ -16,6 +16,8 @@ import jirenClash from "@assets/image_1763925714803.png";
 import moroMagic from "@assets/image_1763925784868.png";
 import gasWeapon from "@assets/image_1763925883258.png";
 import gohanCellMax from "@assets/image_1763928344917.png";
+import gokuBeerus from "@assets/image_1763929394863.png";
+import gokuHit from "@assets/image_1763929447390.png";
 
 const BATTLES = [
   {
@@ -127,6 +129,28 @@ const BATTLES = [
     desc: "The strongest Gohan from the future faces the ultimate bio-engineered android. A battle of transformation and overwhelming power.",
     color: "border-cyan-500",
     image: gohanCellMax
+  },
+  {
+    id: 11,
+    arc: "Battle of Gods Saga",
+    title: "Goku vs Beerus",
+    year: "Age 778",
+    result: "Draw",
+    powerDiff: "Godly",
+    desc: "Goku faces the God of Destruction himself. A clash that shook the universe and awakened Goku to the existence of god-level power.",
+    color: "border-blue-600",
+    image: gokuBeerus
+  },
+  {
+    id: 12,
+    arc: "Tournament of Power",
+    title: "Goku vs Hit",
+    year: "Age 780",
+    result: "Draw",
+    powerDiff: "Close",
+    desc: "An intense battle against the strongest assassin in the multiverse. Goku adapts to Hit's time-skip technique in an epic display of martial arts mastery.",
+    color: "border-pink-600",
+    image: gokuHit
   }
 ];
 
