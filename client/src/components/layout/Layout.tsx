@@ -25,6 +25,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
     }
   }, [theme]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div className={`min-h-screen flex flex-col relative overflow-hidden ${theme}`}>
       {/* Animated Backgrounds */}
