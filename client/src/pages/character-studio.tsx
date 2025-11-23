@@ -204,12 +204,11 @@ export default function CharacterStudio() {
         </div>
       </div>
 
-      <div className="space-y-6">
-        {/* Character List */}
-        <div className="space-y-4">
-          {CHARACTERS.map((char) => (
+      <div className="space-y-4">
+        {/* Character List with inline detail cards */}
+        {CHARACTERS.map((char) => (
+          <div key={char.id} className="space-y-2">
             <div
-              key={char.id}
               onClick={() => setSelected(selected?.id === char.id ? null : char)}
               className={`
                 cursor-pointer p-4 rounded-xl border-2 transition-all hover:scale-105
@@ -226,80 +225,80 @@ export default function CharacterStudio() {
                 <ChevronDown className={`w-5 h-5 transition-transform ${selected?.id === char.id ? 'rotate-180' : ''}`} />
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Character Detail Card - Shows below when selected */}
-        <AnimatePresence>
-          {selected && (
-            <motion.div
-              key={selected.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="bg-card rounded-3xl border-2 border-border shadow-2xl relative overflow-hidden flex flex-col"
-            >
-              {/* Character Image Container */}
-              <div className="relative w-full h-64 overflow-hidden bg-gradient-to-b from-muted/50 to-card flex items-center justify-center border-b border-border">
-                <img 
-                  src={selected.image} 
-                  alt={selected.name}
-                  className="h-full w-full object-cover opacity-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                <span className="absolute -right-10 -top-10 text-6xl font-tech font-black text-muted/5 pointer-events-none select-none uppercase">
-                  {selected.id}
-                </span>
-              </div>
+            {/* Character Detail Card - Shows directly below when selected */}
+            <AnimatePresence>
+              {selected?.id === char.id && (
+                <motion.div
+                  key={`detail-${char.id}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-card rounded-3xl border-2 border-border shadow-2xl relative overflow-hidden"
+                >
+                  {/* Character Image Container */}
+                  <div className="relative w-full h-64 overflow-hidden bg-gradient-to-b from-muted/50 to-card flex items-center justify-center border-b border-border">
+                    <img 
+                      src={char.image} 
+                      alt={char.name}
+                      className="h-full w-full object-cover opacity-90"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                    <span className="absolute -right-10 -top-10 text-6xl font-tech font-black text-muted/5 pointer-events-none select-none uppercase">
+                      {char.id}
+                    </span>
+                  </div>
 
-              {/* Info Section */}
-              <div className="p-8 space-y-6">
-                <div>
-                  <h2 className={`text-4xl font-action mb-2 ${selected.color} text-stroke-sm text-transparent bg-clip-text bg-gradient-to-br from-current to-foreground`}>
-                    {selected.name}
-                  </h2>
-                  <span className="inline-block px-3 py-1 rounded-full bg-muted text-xs font-mono uppercase tracking-wider border border-white/10">
-                    {selected.form}
-                  </span>
-                </div>
-                
-                <p className="font-ui text-sm leading-relaxed text-muted-foreground">
-                  {selected.desc}
-                </p>
-
-                {/* Stats Section */}
-                <div className="space-y-6 pt-6 border-t border-border/50">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-xs font-bold uppercase">
-                        <span className="flex items-center gap-1"><Zap className="w-3 h-3 text-energy-yellow" /> Power</span>
-                        <span className="font-mono">{selected.power}</span>
-                      </div>
-                      <Progress value={selected.power} className="h-1" indicatorClassName="bg-energy-yellow" />
+                  {/* Info Section */}
+                  <div className="p-8 space-y-6">
+                    <div>
+                      <h2 className={`text-4xl font-action mb-2 ${char.color} text-stroke-sm text-transparent bg-clip-text bg-gradient-to-br from-current to-foreground`}>
+                        {char.name}
+                      </h2>
+                      <span className="inline-block px-3 py-1 rounded-full bg-muted text-xs font-mono uppercase tracking-wider border border-white/10">
+                        {char.form}
+                      </span>
                     </div>
+                    
+                    <p className="font-ui text-sm leading-relaxed text-muted-foreground">
+                      {char.desc}
+                    </p>
 
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-xs font-bold uppercase">
-                        <span className="flex items-center gap-1"><Activity className="w-3 h-3 text-blue-500" /> Speed</span>
-                        <span className="font-mono">{selected.speed}</span>
-                      </div>
-                      <Progress value={selected.speed} className="h-1" indicatorClassName="bg-blue-500" />
-                    </div>
+                    {/* Stats Section */}
+                    <div className="space-y-6 pt-6 border-t border-border/50">
+                      <div className="grid grid-cols-3 gap-4">
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-xs font-bold uppercase">
+                            <span className="flex items-center gap-1"><Zap className="w-3 h-3 text-energy-yellow" /> Power</span>
+                            <span className="font-mono">{char.power}</span>
+                          </div>
+                          <Progress value={char.power} className="h-1" indicatorClassName="bg-energy-yellow" />
+                        </div>
 
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-xs font-bold uppercase">
-                        <span className="flex items-center gap-1"><Shield className="w-3 h-3 text-green-500" /> Technique</span>
-                        <span className="font-mono">{selected.technique}</span>
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-xs font-bold uppercase">
+                            <span className="flex items-center gap-1"><Activity className="w-3 h-3 text-blue-500" /> Speed</span>
+                            <span className="font-mono">{char.speed}</span>
+                          </div>
+                          <Progress value={char.speed} className="h-1" indicatorClassName="bg-blue-500" />
+                        </div>
+
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-xs font-bold uppercase">
+                            <span className="flex items-center gap-1"><Shield className="w-3 h-3 text-green-500" /> Technique</span>
+                            <span className="font-mono">{char.technique}</span>
+                          </div>
+                          <Progress value={char.technique} className="h-1" indicatorClassName="bg-green-500" />
+                        </div>
                       </div>
-                      <Progress value={selected.technique} className="h-1" indicatorClassName="bg-green-500" />
                     </div>
                   </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        ))}
       </div>
     </div>
   );
