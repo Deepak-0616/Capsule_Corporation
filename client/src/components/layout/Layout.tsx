@@ -1,15 +1,15 @@
 import { Link, useLocation } from "wouter";
 import { useUserStore } from "@/lib/store";
-import { Zap, User, Shield, Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 import { Starfield } from "@/components/layout/Background";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useEffect } from "react";
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { user, setUser } = useUserStore();
@@ -28,7 +28,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       
       {/* Header */}
       <header className="relative z-50 border-b border-border/40 bg-background/80 backdrop-blur-md sticky top-0">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer group">
               <div className="relative w-10 h-10 flex items-center justify-center bg-capsule-dark rounded-full border-2 border-goku-orange group-hover:animate-spin-slow transition-transform">
@@ -41,12 +41,46 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </Link>
 
-          {/* Clean Header - No Stats */}
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" className="rounded-full">
-               <Menu className="w-5 h-5" />
-            </Button>
-          </div>
+          {/* Menu Bar Navigation */}
+          <Menubar className="border-0 bg-transparent">
+            <MenubarMenu>
+              <MenubarTrigger className="font-tech uppercase text-sm cursor-pointer hover:text-primary transition-colors">Modules</MenubarTrigger>
+              <MenubarContent>
+                <Link href="/tech">
+                  <MenubarItem className="cursor-pointer">Tech Vault</MenubarItem>
+                </Link>
+                <Link href="/battle">
+                  <MenubarItem className="cursor-pointer">Battle History</MenubarItem>
+                </Link>
+                <Link href="/ki">
+                  <MenubarItem className="cursor-pointer">Ki Science</MenubarItem>
+                </Link>
+                <Link href="/lore">
+                  <MenubarItem className="cursor-pointer">Universe Lore</MenubarItem>
+                </Link>
+                <MenubarSeparator />
+                <Link href="/chars">
+                  <MenubarItem className="cursor-pointer">Character Studio</MenubarItem>
+                </Link>
+                <Link href="/fun">
+                  <MenubarItem className="cursor-pointer">Entertainment</MenubarItem>
+                </Link>
+                <Link href="/tribute">
+                  <MenubarItem className="cursor-pointer">Toriyama Tribute</MenubarItem>
+                </Link>
+              </MenubarContent>
+            </MenubarMenu>
+
+            <MenubarMenu>
+              <MenubarTrigger className="font-tech uppercase text-sm cursor-pointer hover:text-primary transition-colors">Info</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem className="text-muted-foreground text-xs">Version 1.0</MenubarItem>
+                <MenubarItem className="text-muted-foreground text-xs">784 AGE</MenubarItem>
+                <MenubarSeparator />
+                <MenubarItem className="text-muted-foreground text-xs">Built for Z Fighters</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+          </Menubar>
         </div>
       </header>
 
