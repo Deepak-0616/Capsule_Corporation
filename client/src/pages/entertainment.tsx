@@ -7,6 +7,7 @@ import friezaForms from "@assets/image_1763928552053.png";
 import launchChar from "@assets/image_1763928603801.png";
 import piccoloGohan from "@assets/image_1763928712992.png";
 import gokuFear from "@assets/image_1763928778584.png";
+import masako from "@assets/image_1763928844652.png";
 
 const FACTS = [
   {
@@ -42,7 +43,7 @@ const FACTS = [
     title: "The Voice",
     text: "Masako Nozawa has voiced Goku for the entire run of the series and voices Gohan and Goten as well.",
     icon: "🎙️",
-    image: null
+    image: masako
   },
   {
     id: 6,
