@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, Info, ShieldCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -42,10 +41,6 @@ const ITEMS = [
 ];
 
 export default function TechVault() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const activeItem = ITEMS[activeIndex];
-
   return (
     <div className="space-y-8 animate-in fade-in duration-700">
       {/* Header */}
@@ -61,100 +56,62 @@ export default function TechVault() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-[600px]">
-        
-        {/* Item Selector */}
-        <div className="lg:col-span-4 space-y-4 flex flex-col overflow-y-auto pr-2">
-          {ITEMS.map((item, idx) => (
-            <motion.div
-              key={item.id}
-              onClick={() => setActiveIndex(idx)}
-              whileHover={{ scale: 1.02 }}
-              className={`
-                cursor-pointer p-4 rounded-xl border-2 transition-all relative overflow-hidden
-                ${activeIndex === idx 
-                  ? `${item.border} bg-muted/50` 
-                  : 'border-muted/20 hover:border-muted-foreground/50'}
-              `}
+      {/* Tech Items Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {ITEMS.map((item, idx) => (
+          <motion.div
+            key={item.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            className="rounded-3xl border border-border bg-black/80 backdrop-blur-xl p-8 flex flex-col items-center relative overflow-hidden shadow-2xl hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-shadow"
+          >
+            {/* Grid Background */}
+            <div className="absolute inset-0 grid-lines opacity-20 pointer-events-none" />
+            
+            {/* Rotating Image Effect */}
+            <motion.div 
+              animate={{ rotate: [0, 5, 0, -5, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10 mb-8"
             >
-              <div className="flex items-center gap-4 relative z-10">
-                <div className={`w-12 h-12 rounded-lg border ${item.border} bg-black/50 flex items-center justify-center overflow-hidden`}>
-                  <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-                </div>
-                <div>
-                  <h3 className="font-tech font-bold text-lg">{item.name}</h3>
-                  <p className="text-xs font-mono text-muted-foreground">{item.model}</p>
-                </div>
-              </div>
-              {/* Active Glow */}
-              {activeIndex === idx && (
-                <motion.div 
-                  layoutId="activeGlow"
-                  className={`absolute inset-0 ${item.color.replace('text', 'bg')}/5 z-0`}
-                />
-              )}
+              <div className={`absolute inset-0 blur-3xl opacity-30 ${item.color.replace('text', 'bg')}`} />
+              <img 
+                src={item.image} 
+                alt={item.name} 
+                className="w-48 h-48 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+              />
             </motion.div>
-          ))}
-        </div>
 
-        {/* 3D/Schematic Viewer */}
-        <div className="lg:col-span-8 relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeItem.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.1 }}
-              transition={{ duration: 0.4 }}
-              className="w-full h-full rounded-3xl border border-border bg-black/80 backdrop-blur-xl p-8 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl"
-            >
-              {/* Grid Background */}
-              <div className="absolute inset-0 grid-lines opacity-20 pointer-events-none" />
+            {/* Tech Details */}
+            <div className="relative z-10 w-full space-y-4">
+              <div>
+                <h2 className="font-tech text-2xl uppercase tracking-wider mb-2">{item.name}</h2>
+                <p className="text-xs font-mono text-muted-foreground mb-4">{item.model}</p>
+                <div className="h-1 w-16 bg-primary" />
+              </div>
               
-              {/* Rotating Image Effect */}
-              <motion.div 
-                animate={{ rotate: [0, 5, 0, -5, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative z-10 mb-8"
-              >
-                <div className={`absolute inset-0 blur-3xl opacity-30 ${activeItem.color.replace('text', 'bg')}`} />
-                <img 
-                  src={activeItem.image} 
-                  alt={activeItem.name} 
-                  className="w-64 h-64 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
-                />
-              </motion.div>
+              <p className="font-ui text-sm text-muted-foreground leading-relaxed">
+                {item.desc}
+              </p>
 
-              {/* Tech Details */}
-              <div className="relative z-10 w-full max-w-lg space-y-6 bg-card/90 backdrop-blur p-6 rounded-xl border border-border">
-                <div>
-                  <h2 className="font-tech text-3xl uppercase tracking-wider mb-1">{activeItem.name}</h2>
-                  <div className="h-1 w-20 bg-primary" />
-                </div>
-                
-                <p className="font-ui text-lg text-muted-foreground">
-                  {activeItem.desc}
-                </p>
-
-                <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border/50">
-                  {Object.entries(activeItem.stats).map(([key, value]) => (
-                    <div key={key} className="text-center">
-                      <p className="text-[10px] font-mono uppercase text-muted-foreground mb-1">{key}</p>
-                      <p className={`font-bold font-tech ${activeItem.color}`}>{value}</p>
-                    </div>
-                  ))}
-                </div>
+              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-border/50">
+                {Object.entries(item.stats).map(([key, value]) => (
+                  <div key={key} className="text-center">
+                    <p className="text-[9px] font-mono uppercase text-muted-foreground mb-1">{key}</p>
+                    <p className={`font-bold font-tech text-sm ${item.color}`}>{value}</p>
+                  </div>
+                ))}
               </div>
+            </div>
 
-              {/* Decorative Corners */}
-              <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary/50" />
-              <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-primary/50" />
-              <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-primary/50" />
-              <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary/50" />
-
-            </motion.div>
-          </AnimatePresence>
-        </div>
+            {/* Decorative Corners */}
+            <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-primary/50" />
+            <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-primary/50" />
+            <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-primary/50" />
+            <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-primary/50" />
+          </motion.div>
+        ))}
       </div>
     </div>
   );
