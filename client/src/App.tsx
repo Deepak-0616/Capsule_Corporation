@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Layout } from "@/components/layout/Layout";
 import Dashboard from "@/pages/dashboard";
 import CharacterStudio from "@/pages/character-studio";
+import TechVault from "@/pages/tech-vault";
+import BattleHistory from "@/pages/battle-history";
 import NotFound from "@/pages/not-found";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -66,13 +68,9 @@ function Router() {
       <Switch>
         <Route path="/" component={Dashboard} />
         <Route path="/chars" component={CharacterStudio} />
+        <Route path="/tech" component={TechVault} />
+        <Route path="/battle" component={BattleHistory} />
         
-        <Route path="/tech">
-          <SectionPlaceholder title="Legendary Tech Vault" />
-        </Route>
-        <Route path="/battle">
-          <SectionPlaceholder title="Battle History" />
-        </Route>
         <Route path="/ki">
           <SectionPlaceholder title="Ki Science Lab" />
         </Route>
