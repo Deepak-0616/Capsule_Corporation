@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import gokuEating from "@assets/generated_images/goku_eating_ramen.png";
 import roshiHouse from "@assets/generated_images/master_roshi_kame_house.png";
+import friezaForms from "@assets/image_1763928552053.png";
 
 const FACTS = [
   {
@@ -45,7 +46,7 @@ const FACTS = [
     title: "Frieza's Forms",
     text: "Frieza's 3rd form was based on the Alien Xenomorph design.",
     icon: "👽",
-    image: null
+    image: friezaForms
   }
 ];
 
