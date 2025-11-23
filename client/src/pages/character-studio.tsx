@@ -14,7 +14,7 @@ import friezaImg from '@assets/generated_images/frieza_black_accurate.png';
 import cellImg from '@assets/generated_images/cell_max_accurate.png';
 import jirenImg from '@assets/generated_images/jiren_accurate.png';
 import moroImg from '@assets/generated_images/moro_angel_accurate.png';
-import gasImg from '@assets/generated_images/gas_heeter_accurate.png';
+import gasImg from '@assets/image_1763921774297.png';
 import buuImg from '@assets/image_1763921511017.png';
 
 const CHARACTERS = [
