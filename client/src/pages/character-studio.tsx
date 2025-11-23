@@ -16,6 +16,7 @@ import jirenImg from '@assets/image_1763922198924.png';
 import moroImg from '@assets/image_1763921883315.png';
 import gasImg from '@assets/image_1763921774297.png';
 import buuImg from '@assets/image_1763922000958.png';
+import zamasuImg from '@assets/image_1763923293191.png';
 
 const CHARACTERS = [
   // Z Fighters
@@ -129,6 +130,18 @@ const CHARACTERS = [
     image: buuImg
   },
   {
+    id: 'zamasu',
+    name: 'Zamasu',
+    form: 'Goku Black',
+    power: 95,
+    speed: 94,
+    technique: 99,
+    desc: "A rogue Supreme Kai who declared himself the god of a new universe. Fused with Goku's body.",
+    color: 'text-green-600',
+    border: 'border-green-600',
+    image: zamasuImg
+  },
+  {
     id: 'jiren',
     name: 'Jiren',
     form: 'Full Power',
@@ -165,8 +178,6 @@ const CHARACTERS = [
     image: gasImg
   },
 ];
-
-// Placeholder for additional character - Zamasu coming soon
 
 export default function CharacterStudio() {
   const [selected, setSelected] = useState(CHARACTERS[0]);
