@@ -3,9 +3,9 @@ import { Link } from "wouter";
 import { ArrowLeft, Info, ShieldCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import dragonRadar from "@assets/generated_images/dragon_radar_anime_style.png";
-import capsule from "@assets/generated_images/hoi_poi_capsule_schematic.png"; // Keeping schematic for this one as it looks techy
-import scouter from "@assets/generated_images/saiyan_scouter_anime_style.png";
+import dragonRadar from "@assets/0c4a2848-c3c1-4d8b-9359-97cc640f4727_1763924651796.png";
+import capsule from "@assets/image_1763924610674.png";
+import scouter from "@assets/image_1763924711432.png";
 
 const ITEMS = [
   {
