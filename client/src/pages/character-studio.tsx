@@ -12,7 +12,7 @@ import brolyImg from '@assets/generated_images/broly_ssj_accurate.png';
 import trunksImg from '@assets/generated_images/trunks_ssj_rage_accurate.png';
 import friezaImg from '@assets/image_1763922088668.png';
 import cellImg from '@assets/image_1763922169800.png';
-import jirenImg from '@assets/generated_images/jiren_accurate.png';
+import jirenImg from '@assets/image_1763922198924.png';
 import moroImg from '@assets/image_1763921883315.png';
 import gasImg from '@assets/image_1763921774297.png';
 import buuImg from '@assets/image_1763922000958.png';
