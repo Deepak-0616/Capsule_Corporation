@@ -5,14 +5,13 @@ import {
   Swords, 
   Zap, 
   ScrollText, 
-  Network, 
   Users, 
-  Gamepad2 
+  Gamepad2,
+  PenTool
 } from "lucide-react";
-import { useUserStore } from "@/lib/store";
-import { useEffect } from "react";
 import techBg from "@assets/generated_images/futuristic_anime_lab_background_texture.png";
 import auraBg from "@assets/generated_images/dragon_ball_style_energy_aura_background.png";
+import toriyamaArt from "@assets/generated_images/akira_toriyama_tribute_art.png";
 
 const SECTIONS = [
   {
@@ -62,17 +61,6 @@ const SECTIONS = [
     desc: "Map of the 12 Universes, Namekian history, and the Dragon Balls."
   },
   {
-    id: "meme",
-    title: "Internet Capsule",
-    subtitle: "Meme Timeline",
-    icon: Network,
-    color: "text-pink-500",
-    bg: "bg-pink-500/10",
-    border: "border-pink-500/30",
-    link: "/meme",
-    desc: "The lighter side of Z. Trends, memes, and community submissions."
-  },
-  {
     id: "chars",
     title: "Character Studio",
     subtitle: "Analyzer",
@@ -93,6 +81,18 @@ const SECTIONS = [
     border: "border-purple-500/30",
     link: "/fun",
     desc: "Mini-games, quizzes, and interactive fun."
+  },
+  {
+    id: "tribute",
+    title: "Toriyama Tribute",
+    subtitle: "Thank You Sensei",
+    icon: PenTool,
+    color: "text-white",
+    bg: "bg-white/10",
+    border: "border-white/30",
+    link: "/tribute",
+    desc: "A dedication to the legendary creator, Akira Toriyama.",
+    image: toriyamaArt
   }
 ];
 
@@ -112,16 +112,6 @@ const item = {
 };
 
 export default function Dashboard() {
-  const { user, updatePowerLevel } = useUserStore();
-
-  // Easter egg: Boost power level on visit
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      updatePowerLevel(1);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="space-y-8">
       <div className="text-center space-y-4 py-8">
@@ -133,8 +123,7 @@ export default function Dashboard() {
           Capsule Corp
         </motion.h1>
         <p className="font-ui text-xl text-muted-foreground max-w-2xl mx-auto">
-          Welcome, <span className="font-bold text-primary">{user.name}</span>. 
-          Select a module to begin your research.
+          Welcome to the ultimate database.
         </p>
       </div>
 
@@ -160,7 +149,7 @@ export default function Dashboard() {
               {/* Background Image (Optional) */}
               {section.image && (
                 <div 
-                  className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-cover bg-center mix-blend-overlay"
+                  className="absolute inset-0 z-0 opacity-0 group-hover:opacity-40 transition-opacity duration-500 bg-cover bg-center mix-blend-overlay"
                   style={{ backgroundImage: `url(${section.image})` }}
                 />
               )}
@@ -199,15 +188,6 @@ export default function Dashboard() {
             </motion.div>
           </Link>
         ))}
-        
-        {/* Empty Slot / Coming Soon */}
-        <motion.div 
-          variants={item}
-          className="h-64 rounded-3xl border-2 border-dashed border-muted-foreground/20 p-6 flex flex-col items-center justify-center text-muted-foreground opacity-50"
-        >
-          <span className="font-tech text-4xl mb-2">?</span>
-          <span className="font-ui uppercase tracking-widest text-xs">Module Locked</span>
-        </motion.div>
       </motion.div>
     </div>
   );
