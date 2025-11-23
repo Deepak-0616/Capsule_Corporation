@@ -1,34 +1,39 @@
 import { Link, useLocation } from "wouter";
 import { useUserStore } from "@/lib/store";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Menu, Sun, Moon } from "lucide-react";
 import { Starfield } from "@/components/layout/Background";
+import { Button } from "@/components/ui/button";
 import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarSeparator,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { user, setUser } = useUserStore();
   const [location] = useLocation();
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
-  // Force Dark Mode
   useEffect(() => {
-    document.documentElement.classList.add('dark');
-  }, []);
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+  }, [theme]);
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden dark">
+    <div className={`min-h-screen flex flex-col relative overflow-hidden ${theme}`}>
       {/* Animated Backgrounds */}
       <Starfield />
       <div className="fixed inset-0 pointer-events-none z-0 grid-lines opacity-40" />
       
       {/* Header */}
       <header className="relative z-50 border-b border-border/40 bg-background/80 backdrop-blur-md sticky top-0">
-        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer group">
               <div className="relative w-10 h-10 flex items-center justify-center bg-capsule-dark rounded-full border-2 border-goku-orange group-hover:animate-spin-slow transition-transform">
@@ -41,46 +46,50 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </Link>
 
-          {/* Menu Bar Navigation */}
-          <Menubar className="border-0 bg-transparent">
-            <MenubarMenu>
-              <MenubarTrigger className="font-tech uppercase text-sm cursor-pointer hover:text-primary transition-colors">Modules</MenubarTrigger>
-              <MenubarContent>
+          {/* Right Navigation */}
+          <div className="flex items-center gap-2">
+            {/* Theme Toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="rounded-full hover:bg-muted"
+            >
+              {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </Button>
+
+            {/* Hamburger Menu */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="rounded-full hover:bg-muted">
+                  <Menu className="w-5 h-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
                 <Link href="/tech">
-                  <MenubarItem className="cursor-pointer">Tech Vault</MenubarItem>
+                  <DropdownMenuItem className="cursor-pointer">Tech Vault</DropdownMenuItem>
                 </Link>
                 <Link href="/battle">
-                  <MenubarItem className="cursor-pointer">Battle History</MenubarItem>
+                  <DropdownMenuItem className="cursor-pointer">Battle History</DropdownMenuItem>
                 </Link>
                 <Link href="/ki">
-                  <MenubarItem className="cursor-pointer">Ki Science</MenubarItem>
+                  <DropdownMenuItem className="cursor-pointer">Ki Science</DropdownMenuItem>
                 </Link>
                 <Link href="/lore">
-                  <MenubarItem className="cursor-pointer">Universe Lore</MenubarItem>
+                  <DropdownMenuItem className="cursor-pointer">Universe Lore</DropdownMenuItem>
                 </Link>
-                <MenubarSeparator />
                 <Link href="/chars">
-                  <MenubarItem className="cursor-pointer">Character Studio</MenubarItem>
+                  <DropdownMenuItem className="cursor-pointer">Character Studio</DropdownMenuItem>
                 </Link>
                 <Link href="/fun">
-                  <MenubarItem className="cursor-pointer">Entertainment</MenubarItem>
+                  <DropdownMenuItem className="cursor-pointer">Entertainment</DropdownMenuItem>
                 </Link>
                 <Link href="/tribute">
-                  <MenubarItem className="cursor-pointer">Toriyama Tribute</MenubarItem>
+                  <DropdownMenuItem className="cursor-pointer">Toriyama Tribute</DropdownMenuItem>
                 </Link>
-              </MenubarContent>
-            </MenubarMenu>
-
-            <MenubarMenu>
-              <MenubarTrigger className="font-tech uppercase text-sm cursor-pointer hover:text-primary transition-colors">Info</MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem className="text-muted-foreground text-xs">Version 1.0</MenubarItem>
-                <MenubarItem className="text-muted-foreground text-xs">784 AGE</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem className="text-muted-foreground text-xs">Built for Z Fighters</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-          </Menubar>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </header>
 
