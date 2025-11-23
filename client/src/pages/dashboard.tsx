@@ -12,7 +12,7 @@ import {
 import techBg from "@assets/generated_images/futuristic_anime_lab_background_texture.png";
 import auraBg from "@assets/generated_images/dragon_ball_style_energy_aura_background.png";
 import toriyamaArt from "@assets/generated_images/akira_toriyama_tribute_art.png";
-import radarImg from "@assets/generated_images/dragon_radar_anime_style.png";
+import radarImg from "@assets/image_1763926730038.png";
 import gokuVsVegeta from "@assets/generated_images/goku_vs_vegeta_beam_struggle_manga.png";
 import uiGoku from "@assets/image_1763926381541.png";
 import zeno from "@assets/image_1763926470664.png";
