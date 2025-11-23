@@ -10,7 +10,7 @@ import gohanImg from '@assets/generated_images/gohan_beast_accurate.png';
 import piccoloImg from '@assets/generated_images/piccolo_orange_accurate.png';
 import brolyImg from '@assets/generated_images/broly_ssj_accurate.png';
 import trunksImg from '@assets/generated_images/trunks_ssj_rage_accurate.png';
-import friezaImg from '@assets/generated_images/frieza_black_accurate.png';
+import friezaImg from '@assets/image_1763922088668.png';
 import cellImg from '@assets/generated_images/cell_max_accurate.png';
 import jirenImg from '@assets/generated_images/jiren_accurate.png';
 import moroImg from '@assets/image_1763921883315.png';
