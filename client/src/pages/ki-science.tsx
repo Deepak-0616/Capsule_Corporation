@@ -2,16 +2,16 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import uiGoku from "@assets/generated_images/goku_ultra_instinct_mastered.png";
-import ueVegeta from "@assets/generated_images/ultra_ego_transformation.png";
-import beastGohan from "@assets/generated_images/gohan_beast_perfect_form.png";
-import ssj from "@assets/generated_images/super_saiyan_transformation.png";
-import ssj2 from "@assets/stock_images/super_saiyan_2_gohan_600d5c92.jpg";
-import ssj3 from "@assets/stock_images/super_saiyan_3_goku__dbcefbbf.jpg";
-import ssj4 from "@assets/stock_images/super_saiyan_4_goku__e9831f5c.jpg";
-import legendary from "@assets/stock_images/legendary_super_saiy_71efce5f.jpg";
-import ssg from "@assets/generated_images/super_saiyan_god_transformation.png";
-import ssb from "@assets/generated_images/super_saiyan_blue_transformation.png";
+import ssj from "@assets/image_1763927636854.png";
+import ssj2 from "@assets/image_1763927651696.png";
+import ssj3 from "@assets/image_1763927694868.png";
+import legendary from "@assets/image_1763927714548.png";
+import legendary2 from "@assets/image_1763927752928.png";
+import ssg from "@assets/image_1763927778977.png";
+import ssb from "@assets/image_1763927812656.png";
+import ueVegeta from "@assets/image_1763927928875.png";
+import uiGoku from "@assets/image_1763927957497.png";
+import beastGohan from "@assets/image_1763927983360.png";
 
 const TRANSFORMATIONS = [
   {
@@ -42,21 +42,21 @@ const TRANSFORMATIONS = [
     image: ssj3
   },
   {
-    id: "ssj4",
-    name: "Super Saiyan 4",
-    user: "Goku (GT), Vegeta (GT)",
-    desc: "A transformation only achievable through Saiyan-Human hybrid bloodline or unique circumstances. Red-furred appearance with enhanced instincts and power beyond imagination.",
-    color: "text-red-600",
-    border: "border-red-600",
-    image: ssj4
-  },
-  {
     id: "legendary",
     name: "Legendary Super Saiyan",
     user: "Broly",
     desc: "An extraordinarily rare transformation that appears once every 1,000 years. Manifests with green hair and an uncontrollable destructive power.",
     color: "text-green-500",
     border: "border-green-500",
+    image: legendary2
+  },
+  {
+    id: "ssj4",
+    name: "Super Saiyan 4",
+    user: "Goku (GT), Vegeta (GT)",
+    desc: "A transformation only achievable through Saiyan-Human hybrid bloodline or unique circumstances. Red-furred appearance with enhanced instincts and power beyond imagination.",
+    color: "text-red-600",
+    border: "border-red-600",
     image: legendary
   },
   {
