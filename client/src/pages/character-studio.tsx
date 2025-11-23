@@ -210,7 +210,7 @@ export default function CharacterStudio() {
           {CHARACTERS.map((char) => (
             <div
               key={char.id}
-              onClick={() => setSelected(char)}
+              onClick={() => setSelected(selected?.id === char.id ? null : char)}
               className={`
                 cursor-pointer p-4 rounded-xl border-2 transition-all hover:scale-105
                 ${selected?.id === char.id 
