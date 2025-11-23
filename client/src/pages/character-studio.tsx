@@ -15,7 +15,7 @@ import cellImg from '@assets/generated_images/cell_max_accurate.png';
 import jirenImg from '@assets/generated_images/jiren_accurate.png';
 import moroImg from '@assets/image_1763921883315.png';
 import gasImg from '@assets/image_1763921774297.png';
-import buuImg from '@assets/image_1763921511017.png';
+import buuImg from '@assets/image_1763922000958.png';
 
 const CHARACTERS = [
   // Z Fighters
