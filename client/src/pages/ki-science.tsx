@@ -6,6 +6,10 @@ import uiGoku from "@assets/generated_images/goku_ultra_instinct_mastered.png";
 import ueVegeta from "@assets/generated_images/ultra_ego_transformation.png";
 import beastGohan from "@assets/generated_images/gohan_beast_perfect_form.png";
 import ssj from "@assets/generated_images/super_saiyan_transformation.png";
+import ssj2 from "@assets/stock_images/super_saiyan_2_gohan_600d5c92.jpg";
+import ssj3 from "@assets/stock_images/super_saiyan_3_goku__dbcefbbf.jpg";
+import ssj4 from "@assets/stock_images/super_saiyan_4_goku__e9831f5c.jpg";
+import legendary from "@assets/stock_images/legendary_super_saiy_71efce5f.jpg";
 import ssg from "@assets/generated_images/super_saiyan_god_transformation.png";
 import ssb from "@assets/generated_images/super_saiyan_blue_transformation.png";
 
@@ -18,6 +22,42 @@ const TRANSFORMATIONS = [
     color: "text-yellow-400",
     border: "border-yellow-400",
     image: ssj
+  },
+  {
+    id: "ssj2",
+    name: "Super Saiyan 2",
+    user: "Goku, Vegeta, Gohan, Majin Buu",
+    desc: "An enhanced version of the Super Saiyan form. Multiplies power by 100x. Features electricity arcing around the body and enhanced speed.",
+    color: "text-yellow-300",
+    border: "border-yellow-300",
+    image: ssj2
+  },
+  {
+    id: "ssj3",
+    name: "Super Saiyan 3",
+    user: "Goku, Vegeta",
+    desc: "The ultimate Super Saiyan evolution. Multiplies power by 400x. Features long, flowing hair extending down the back and immense drain on energy.",
+    color: "text-yellow-200",
+    border: "border-yellow-200",
+    image: ssj3
+  },
+  {
+    id: "ssj4",
+    name: "Super Saiyan 4",
+    user: "Goku (GT), Vegeta (GT)",
+    desc: "A transformation only achievable through Saiyan-Human hybrid bloodline or unique circumstances. Red-furred appearance with enhanced instincts and power beyond imagination.",
+    color: "text-red-600",
+    border: "border-red-600",
+    image: ssj4
+  },
+  {
+    id: "legendary",
+    name: "Legendary Super Saiyan",
+    user: "Broly",
+    desc: "An extraordinarily rare transformation that appears once every 1,000 years. Manifests with green hair and an uncontrollable destructive power.",
+    color: "text-green-500",
+    border: "border-green-500",
+    image: legendary
   },
   {
     id: "ssg",
