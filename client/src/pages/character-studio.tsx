@@ -212,14 +212,9 @@ export default function CharacterStudio() {
                   : 'border-transparent bg-card hover:border-muted-foreground/30'}
               `}
             >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-tech font-bold text-lg">{char.name}</h3>
-                  <p className="text-xs font-mono text-muted-foreground uppercase">{char.form}</p>
-                </div>
-                <div className={`h-8 w-8 rounded-full ${char.border} border-2 flex items-center justify-center`}>
-                  <span className={`font-action text-xs ${char.color}`}>{char.name[0]}</span>
-                </div>
+              <div>
+                <h3 className="font-tech font-bold text-lg">{char.name}</h3>
+                <p className="text-xs font-mono text-muted-foreground uppercase">{char.form}</p>
               </div>
             </div>
           ))}
