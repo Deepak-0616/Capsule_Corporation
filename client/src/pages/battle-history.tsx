@@ -120,7 +120,7 @@ const BATTLES = [
   {
     id: 10,
     arc: "Dragon Ball Super: Super Hero",
-    title: "Future Gohan vs Cell Max",
+    title: "Gohan vs Cell Max",
     year: "Age 782",
     result: "Victory",
     powerDiff: "Overwhelming",
