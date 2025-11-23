@@ -14,42 +14,36 @@ const FACTS = [
     id: 1,
     title: "Goku's Fear",
     text: "Despite fighting gods and monsters, Goku has a paralyzing fear of needles and hospital injections.",
-    icon: "💉",
     image: gokuFear
   },
   {
     id: 2,
     title: "Piccolo's Age",
     text: "Piccolo is technically only 4 years older than Gohan due to Namekian aging mechanics.",
-    icon: "🐌",
     image: piccoloGohan
   },
   {
     id: 3,
     title: "Launch?",
     text: "Akira Toriyama famously forgot about Launch, which is why she disappeared in Dragon Ball Z.",
-    icon: "🤧",
     image: launchChar
   },
   {
     id: 4,
     title: "Kame House",
     text: "Master Roshi's house has a different address in almost every appearance in the manga.",
-    icon: "🏠",
     image: roshiHouse
   },
   {
     id: 5,
     title: "The Voice",
     text: "Masako Nozawa has voiced Goku for the entire run of the series and voices Gohan and Goten as well.",
-    icon: "🎙️",
     image: masako
   },
   {
     id: 6,
     title: "Frieza's Forms",
     text: "Frieza's 3rd form was based on the Alien Xenomorph design.",
-    icon: "👽",
     image: friezaForms
   }
 ];
@@ -82,7 +76,6 @@ export default function EntertainmentZone() {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             
             <div className="relative z-10 p-6 flex flex-col h-full justify-end">
-                <div className="text-4xl mb-4 transform group-hover:scale-125 transition-transform duration-300">{fact.icon}</div>
                 <h3 className="font-tech text-xl font-bold mb-2 text-secondary">{fact.title}</h3>
                 <p className="font-ui text-gray-300 group-hover:text-white transition-colors">{fact.text}</p>
             </div>
