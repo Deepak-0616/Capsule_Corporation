@@ -73,13 +73,13 @@ export default function TechVault() {
             <motion.div 
               animate={{ rotate: [0, 5, 0, -5, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 mb-8"
+              className="relative z-10 mb-8 w-56 h-56 flex items-center justify-center"
             >
               <div className={`absolute inset-0 blur-3xl opacity-30 ${item.color.replace('text', 'bg')}`} />
               <img 
                 src={item.image} 
                 alt={item.name} 
-                className="w-48 h-48 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
               />
             </motion.div>
 
