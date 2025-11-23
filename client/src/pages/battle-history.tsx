@@ -66,72 +66,6 @@ const BATTLES = [
   },
   {
     id: 5,
-    arc: "Goku Black Saga",
-    title: "Future Trunks vs Zamasu",
-    year: "Age 796",
-    result: "Pyrrhic",
-    powerDiff: "Divine",
-    desc: "The strongest warrior of the future battles an immortal god. Super Saiyan Rage Trunks unleashes the Spirit Bomb to end the multiverse threat.",
-    color: "border-pink-500",
-    image: trunksZamasu
-  },
-  {
-    id: 6,
-    arc: "ToP Saga",
-    title: "Goku vs Jiren",
-    year: "Age 780",
-    result: "Victory (Team)",
-    powerDiff: "Limit Broken",
-    desc: "A clash that shook the World of Void. Goku taps into the state of the Gods: Ultra Instinct.",
-    color: "border-gray-200",
-    image: jirenClash
-  },
-  {
-    id: 7,
-    arc: "Broly Saga",
-    title: "Gogeta vs Broly",
-    year: "Age 780",
-    result: "Victory",
-    powerDiff: "Unmatched",
-    desc: "The Legendary Super Saiyan vs the ultimate fusion. Reality shattered under their colliding power.",
-    color: "border-green-500",
-    image: brolyPower
-  },
-  {
-    id: 8,
-    arc: "Moro Saga",
-    title: "Goku vs Moro",
-    year: "Age 781",
-    result: "Victory",
-    powerDiff: "Divine",
-    desc: "Mastered Ultra Instinct vs the Planet Eater's dark magic. Goku fights as an Earthling to protect the galaxy.",
-    color: "border-indigo-500",
-    image: moroMagic
-  },
-  {
-    id: 9,
-    arc: "Granolah Saga",
-    title: "Goku & Vegeta vs Gas",
-    year: "Age 781",
-    result: "Victory",
-    powerDiff: "Desperate",
-    desc: "True Ultra Instinct and Ultra Ego team up against the strongest warrior in the universe.",
-    color: "border-orange-500",
-    image: gasWeapon
-  },
-  {
-    id: 10,
-    arc: "Dragon Ball Super: Super Hero",
-    title: "Gohan vs Cell Max",
-    year: "Age 782",
-    result: "Victory",
-    powerDiff: "Overwhelming",
-    desc: "The strongest Gohan from the future faces the ultimate bio-engineered android. A battle of transformation and overwhelming power.",
-    color: "border-cyan-500",
-    image: gohanCellMax
-  },
-  {
-    id: 11,
     arc: "Battle of Gods Saga",
     title: "Goku vs Beerus",
     year: "Age 778",
@@ -142,7 +76,7 @@ const BATTLES = [
     image: gokuBeerus
   },
   {
-    id: 12,
+    id: 6,
     arc: "Tournament of Power",
     title: "Goku vs Hit",
     year: "Age 780",
@@ -151,6 +85,72 @@ const BATTLES = [
     desc: "An intense battle against the strongest assassin in the multiverse. Goku adapts to Hit's time-skip technique in an epic display of martial arts mastery.",
     color: "border-pink-600",
     image: gokuHit
+  },
+  {
+    id: 7,
+    arc: "Goku Black Saga",
+    title: "Future Trunks vs Zamasu",
+    year: "Age 796",
+    result: "Pyrrhic",
+    powerDiff: "Divine",
+    desc: "The strongest warrior of the future battles an immortal god. Super Saiyan Rage Trunks unleashes the Spirit Bomb to end the multiverse threat.",
+    color: "border-pink-500",
+    image: trunksZamasu
+  },
+  {
+    id: 8,
+    arc: "ToP Saga",
+    title: "Goku vs Jiren",
+    year: "Age 780",
+    result: "Victory (Team)",
+    powerDiff: "Limit Broken",
+    desc: "A clash that shook the World of Void. Goku taps into the state of the Gods: Ultra Instinct.",
+    color: "border-gray-200",
+    image: jirenClash
+  },
+  {
+    id: 9,
+    arc: "Broly Saga",
+    title: "Gogeta vs Broly",
+    year: "Age 780",
+    result: "Victory",
+    powerDiff: "Unmatched",
+    desc: "The Legendary Super Saiyan vs the ultimate fusion. Reality shattered under their colliding power.",
+    color: "border-green-500",
+    image: brolyPower
+  },
+  {
+    id: 10,
+    arc: "Moro Saga",
+    title: "Goku vs Moro",
+    year: "Age 781",
+    result: "Victory",
+    powerDiff: "Divine",
+    desc: "Mastered Ultra Instinct vs the Planet Eater's dark magic. Goku fights as an Earthling to protect the galaxy.",
+    color: "border-indigo-500",
+    image: moroMagic
+  },
+  {
+    id: 11,
+    arc: "Granolah Saga",
+    title: "Goku & Vegeta vs Gas",
+    year: "Age 781",
+    result: "Victory",
+    powerDiff: "Desperate",
+    desc: "True Ultra Instinct and Ultra Ego team up against the strongest warrior in the universe.",
+    color: "border-orange-500",
+    image: gasWeapon
+  },
+  {
+    id: 12,
+    arc: "Dragon Ball Super: Super Hero",
+    title: "Gohan vs Cell Max",
+    year: "Age 782",
+    result: "Victory",
+    powerDiff: "Overwhelming",
+    desc: "The strongest Gohan from the future faces the ultimate bio-engineered android. A battle of transformation and overwhelming power.",
+    color: "border-cyan-500",
+    image: gohanCellMax
   }
 ];
 
