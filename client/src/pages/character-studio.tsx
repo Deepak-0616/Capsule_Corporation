@@ -16,6 +16,7 @@ import jirenImg from '@assets/image_1763922198924.png';
 import moroImg from '@assets/image_1763921883315.png';
 import gasImg from '@assets/image_1763921774297.png';
 import buuImg from '@assets/image_1763922000958.png';
+import zamasuImg from '@assets/image_placeholder_zamasu.png';
 
 const CHARACTERS = [
   // Z Fighters
@@ -117,6 +118,18 @@ const CHARACTERS = [
     image: cellImg
   },
   {
+    id: 'buu',
+    name: 'Majin Buu',
+    form: 'Kid Buu',
+    power: 85,
+    speed: 90,
+    technique: 80,
+    desc: "Pure chaotic evil. Can regenerate from almost anything.",
+    color: 'text-pink-500',
+    border: 'border-pink-500',
+    image: buuImg
+  },
+  {
     id: 'jiren',
     name: 'Jiren',
     form: 'Full Power',
@@ -153,16 +166,16 @@ const CHARACTERS = [
     image: gasImg
   },
   {
-    id: 'buu',
-    name: 'Majin Buu',
-    form: 'Kid Buu',
-    power: 85,
-    speed: 90,
-    technique: 80,
-    desc: "Pure chaotic evil. Can regenerate from almost anything.",
-    color: 'text-pink-500',
-    border: 'border-pink-500',
-    image: buuImg
+    id: 'zamasu',
+    name: 'Zamasu',
+    form: 'Goku Black',
+    power: 95,
+    speed: 94,
+    technique: 99,
+    desc: "A rogue Supreme Kai who declared himself the god of a new universe. Fused with Goku's body.",
+    color: 'text-gray-700',
+    border: 'border-gray-700',
+    image: zamasuImg
   }
 ];
 
