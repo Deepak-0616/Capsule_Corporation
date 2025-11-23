@@ -1,43 +1,51 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import gokuEating from "@assets/generated_images/goku_eating_ramen.png";
+import roshiHouse from "@assets/generated_images/master_roshi_kame_house.png";
 
 const FACTS = [
   {
     id: 1,
     title: "Goku's Fear",
     text: "Despite fighting gods and monsters, Goku has a paralyzing fear of needles and hospital injections.",
-    icon: "💉"
+    icon: "💉",
+    image: gokuEating // Placeholder for funny moment
   },
   {
     id: 2,
     title: "Piccolo's Age",
     text: "Piccolo is technically only 4 years older than Gohan due to Namekian aging mechanics.",
-    icon: "🐌"
+    icon: "🐌",
+    image: null
   },
   {
     id: 3,
     title: "Launch?",
     text: "Akira Toriyama famously forgot about Launch, which is why she disappeared in Dragon Ball Z.",
-    icon: "🤧"
+    icon: "🤧",
+    image: null
   },
   {
     id: 4,
-    title: "Vegeta's Height",
-    text: "Vegeta was originally much shorter in the Saiyan Saga but was drawn taller over time to match Goku.",
-    icon: "📏"
+    title: "Kame House",
+    text: "Master Roshi's house has a different address in almost every appearance in the manga.",
+    icon: "🏠",
+    image: roshiHouse
   },
   {
     id: 5,
     title: "The Voice",
     text: "Masako Nozawa has voiced Goku for the entire run of the series and voices Gohan and Goten as well.",
-    icon: "🎙️"
+    icon: "🎙️",
+    image: null
   },
   {
     id: 6,
     title: "Frieza's Forms",
     text: "Frieza's 3rd form was based on the Alien Xenomorph design.",
-    icon: "👽"
+    icon: "👽",
+    image: null
   }
 ];
 
@@ -58,10 +66,21 @@ export default function EntertainmentZone() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {FACTS.map((fact) => (
-          <div key={fact.id} className="bg-card p-6 rounded-2xl border-2 border-dashed border-border hover:border-primary transition-colors group">
-            <div className="text-4xl mb-4 transform group-hover:scale-125 transition-transform duration-300">{fact.icon}</div>
-            <h3 className="font-tech text-xl font-bold mb-2 text-secondary">{fact.title}</h3>
-            <p className="font-ui text-muted-foreground">{fact.text}</p>
+          <div key={fact.id} className="relative overflow-hidden bg-card rounded-2xl border-2 border-dashed border-border hover:border-primary transition-colors group h-64 flex flex-col">
+            {/* Optional Image Background */}
+            {fact.image && (
+                <div 
+                    className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-40 transition-opacity"
+                    style={{ backgroundImage: `url(${fact.image})` }}
+                />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+            
+            <div className="relative z-10 p-6 flex flex-col h-full justify-end">
+                <div className="text-4xl mb-4 transform group-hover:scale-125 transition-transform duration-300">{fact.icon}</div>
+                <h3 className="font-tech text-xl font-bold mb-2 text-secondary">{fact.title}</h3>
+                <p className="font-ui text-gray-300 group-hover:text-white transition-colors">{fact.text}</p>
+            </div>
           </div>
         ))}
       </div>

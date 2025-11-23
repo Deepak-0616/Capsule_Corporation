@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portrait from "@assets/generated_images/akira_toriyama_tribute_art.png";
+import portrait from "@assets/generated_images/akira_toriyama_portrait_sketch.png";
 
 export default function Tribute() {
   return (
@@ -18,9 +18,16 @@ export default function Tribute() {
         </div>
       </div>
 
-      <div className="relative rounded-3xl overflow-hidden border-4 border-white/10 bg-black shadow-2xl">
+      <div className="relative rounded-3xl overflow-hidden border-4 border-white/10 bg-black shadow-2xl group">
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-        <img src={portrait} alt="Akira Toriyama Tribute" className="w-full h-auto object-cover opacity-90" />
+        {/* Slow zoom effect */}
+        <div className="overflow-hidden">
+            <img 
+                src={portrait} 
+                alt="Akira Toriyama Tribute" 
+                className="w-full h-auto object-cover opacity-90 transform transition-transform duration-[20s] group-hover:scale-110" 
+            />
+        </div>
         
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-20">
           <h2 className="font-action text-4xl md:text-6xl text-white mb-4 drop-shadow-lg">Thank You, Sensei.</h2>
