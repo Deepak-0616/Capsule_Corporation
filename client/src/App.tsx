@@ -7,6 +7,10 @@ import Dashboard from "@/pages/dashboard";
 import CharacterStudio from "@/pages/character-studio";
 import TechVault from "@/pages/tech-vault";
 import BattleHistory from "@/pages/battle-history";
+import KiScience from "@/pages/ki-science";
+import UniverseLore from "@/pages/universe-lore";
+import EntertainmentZone from "@/pages/entertainment";
+import Tribute from "@/pages/tribute";
 import NotFound from "@/pages/not-found";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -36,27 +40,6 @@ const SectionPlaceholder = ({ title }: { title: string }) => {
             </p>
           </div>
         </div>
-
-        {/* Sidebar Info */}
-        <div className="space-y-6">
-          <div className="p-6 rounded-xl bg-card border shadow-sm space-y-4">
-            <h3 className="font-tech text-lg border-b pb-2">Status Report</h3>
-            <div className="space-y-2 font-mono text-sm">
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Integrity:</span>
-                <span className="text-green-500">100%</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Power:</span>
-                <span className="text-energy-yellow">STABLE</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Access:</span>
-                <span className="text-primary">GRANTED</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -70,18 +53,14 @@ function Router() {
         <Route path="/chars" component={CharacterStudio} />
         <Route path="/tech" component={TechVault} />
         <Route path="/battle" component={BattleHistory} />
+        <Route path="/ki" component={KiScience} />
+        <Route path="/lore" component={UniverseLore} />
+        <Route path="/fun" component={EntertainmentZone} />
+        <Route path="/tribute" component={Tribute} />
         
-        <Route path="/ki">
-          <SectionPlaceholder title="Ki Science Lab" />
-        </Route>
-        <Route path="/lore">
-          <SectionPlaceholder title="Universe Lore" />
-        </Route>
         <Route path="/meme">
-          <SectionPlaceholder title="Meme Timeline" />
-        </Route>
-        <Route path="/fun">
-          <SectionPlaceholder title="Entertainment Zone" />
+           {/* Removed as per request, redirecting or showing 404 if accessed directly */}
+           <NotFound /> 
         </Route>
         <Route component={NotFound} />
       </Switch>
