@@ -1,0 +1,85 @@
+
+
+Role: Act as a Senior Creative Frontend Developer specializing in Gamified UI and interactive web experiences. Your expertise is Vanilla HTML5, CSS3 (Animations, Grid/Flexbox), and ES6 JavaScript.
+Task: Architect and implement “Capsule Corp” a multi-section Dragon Ball-themed interactive platform, built purely with HTML, CSS, and JavaScript—no frameworks or backend.
+Platform Overview:
+A centralized, immersive experience themed around Dragon Ball.
+Features 7 distinct interactive zones, each designed as a capsule or Dragon Ball tile in the main dashboard.
+All state/progress stored in localStorage for a “saved universe” effect.
+Capsule Corp meets World Tournament aesthetics: futuristic yet vibrant, with animated transitions, grid layouts, and characterful touches.
+Design Constraints & Aesthetics:
+Color Variables (CSS):
+--goku-orange: #F85B1A;
+--vegeta-blue: #0040C5;
+--piccolo-green: #359B3B;
+--energy-yellow: #FFE933;
+--villain-purple: #8313A0;
+Consistent use of bold, anime-styled headers and clean sans-serif for data/text.
+Responsive grid layouts and capsule/ball-shaped interactive tiles for navigation.
+Required Sections (Each accessible from the dashboard):
+Legendary Technology Vault
+Explore hallmark DB devices via galleries, animated cards, and interactive trivia.
+Battle History Explorer
+Scrollable, expandable timeline of iconic fights/arcs with stats, clips, and a simple battle simulator.
+Ki Science & Power Lab
+Animations and simulators for charging Ki, transformations, and fusion combos.
+Mythology & Universe Lore
+Clickable universe map, artifact galleries, lore quests, and trivia.
+Internet Capsule & Meme Timeline
+Interactive timeline of DB memes/trends, user submissions, and voting system.
+Character Analyzer Studio
+Detailed character stats, forms, fusions—sortable cards, “VS mode” for stat battles and visualizations.
+Entertainment Zone
+DB-inspired mini-games (Tic-Tac-Toe, Memory Match), live quizzes, visuals, and sound effects.
+General Features:
+Central dashboard with grid/flex-based navigation styled as Dragon Balls/Capsules.
+Avatar customization for users, with power-level and badge tracking stored via localStorage.
+Gamified UI: progress bars, leaderboard effects, unlockable badges.
+Global, reusable CSS classes: .super-saiyan-glow, .capsule-card, .scouter-overlay, etc.
+All animations and interactivity implemented via ES6 JS, CSS animations, and transitions.
+Output Requirements:
+Project Structure:
+Tree view organizing major folders/files:
+text
+/Capsule Corp
+  /assets
+  /css
+    style.css
+  /js
+    script.js
+  /images
+  /components
+  index.html
+  [future-section].html
+
+Global CSS (style.css):
+Include:
+Reset rules.
+CSS variables for easy palette adjustments.
+Reusable classes for effects (glow, overlays, capsules).
+Responsive grid/menu styles for dashboard.
+Main Dashboard (index.html):
+Anime-styled heading.
+Responsive CSS grid of 7 capsule/ball icons, each linking to a section.
+User avatar/profile panel.
+User State Logic (script.js):
+ES6 function to initialize/save User state:
+js
+const user = {
+  name: '',
+  powerLevel: 0,
+  avatar: 'goku',
+  badges: [],
+};
+localStorage.setItem('zUser', JSON.stringify(user));
+
+Functions for updating powerLevel, unlocking badges, saving avatar changes.
+Goals:
+Deliver a visually rich, playful, and unified Dragon Ball experience.
+Navigation and user feedback should feel “anime epic”—fluid, bold, and fun.
+Platform prepared for easy expansion: each section modular for future content.
+Accessibility: simple dark/light mode toggle (Capsule Corp or Saiyan style).
+Deliverables:
+Full project structure and designs for the dashboard and system.
+CSS for theme, palette, and primary effects.
+HTML/JS demonstrating the dashboard’s main navigation and user profile logic.
