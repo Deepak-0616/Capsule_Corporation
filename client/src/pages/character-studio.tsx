@@ -9,7 +9,7 @@ import vegetaImg from '@assets/generated_images/vegeta_ultra_ego_accurate.png';
 import gohanImg from '@assets/image_1763922369472.png';
 import piccoloImg from '@assets/image_1763922313501.png';
 import brolyImg from '@assets/generated_images/broly_ssj_accurate.png';
-import trunksImg from '@assets/generated_images/trunks_ssj_rage_accurate.png';
+import trunksImg from '@assets/image_1763922459188.png';
 import friezaImg from '@assets/image_1763922088668.png';
 import cellImg from '@assets/image_1763922169800.png';
 import jirenImg from '@assets/image_1763922198924.png';
