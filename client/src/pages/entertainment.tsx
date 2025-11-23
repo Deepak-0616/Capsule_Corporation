@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import gokuEating from "@assets/generated_images/goku_eating_ramen.png";
 import roshiHouse from "@assets/generated_images/master_roshi_kame_house.png";
 import friezaForms from "@assets/image_1763928552053.png";
+import launchChar from "@assets/image_1763928603801.png";
 
 const FACTS = [
   {
@@ -25,7 +26,7 @@ const FACTS = [
     title: "Launch?",
     text: "Akira Toriyama famously forgot about Launch, which is why she disappeared in Dragon Ball Z.",
     icon: "🤧",
-    image: null
+    image: launchChar
   },
   {
     id: 4,
