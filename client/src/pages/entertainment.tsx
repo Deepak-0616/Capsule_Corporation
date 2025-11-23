@@ -6,6 +6,7 @@ import roshiHouse from "@assets/generated_images/master_roshi_kame_house.png";
 import friezaForms from "@assets/image_1763928552053.png";
 import launchChar from "@assets/image_1763928603801.png";
 import piccoloGohan from "@assets/image_1763928712992.png";
+import gokuFear from "@assets/image_1763928778584.png";
 
 const FACTS = [
   {
@@ -13,7 +14,7 @@ const FACTS = [
     title: "Goku's Fear",
     text: "Despite fighting gods and monsters, Goku has a paralyzing fear of needles and hospital injections.",
     icon: "💉",
-    image: gokuEating // Placeholder for funny moment
+    image: gokuFear
   },
   {
     id: 2,
