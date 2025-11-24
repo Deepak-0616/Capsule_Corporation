@@ -141,17 +141,17 @@ export default function Dashboard() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-7"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
       >
         {SECTIONS.map((section) => (
           <Link key={section.id} href={section.link}>
             <motion.div
               variants={item}
-              whileHover={{ scale: 1.05, translateY: -8 }}
+              whileHover={{ scale: 1.02, translateY: -5 }}
               whileTap={{ scale: 0.98 }}
               className={`
-                group relative h-56 sm:h-64 lg:h-72 xl:h-80 cursor-pointer overflow-hidden rounded-2xl sm:rounded-3xl border-2 
-                bg-card p-4 sm:p-6 lg:p-8 transition-all hover:shadow-2xl capsule-shadow
+                group relative h-64 cursor-pointer overflow-hidden rounded-3xl border-2 
+                bg-card p-6 transition-colors hover:shadow-xl capsule-shadow
                 flex flex-col justify-between
                 ${section.border}
               `}
@@ -171,22 +171,22 @@ export default function Dashboard() {
               />
 
               {/* Header */}
-              <div className="flex items-start justify-between relative z-10 gap-2">
-                <div className={`rounded-full p-2 sm:p-3 lg:p-4 ${section.bg} backdrop-blur-sm shrink-0`}>
-                  <section.icon className={`h-5 sm:h-6 lg:h-7 w-5 sm:w-6 lg:w-7 ${section.color}`} />
+              <div className="flex items-start justify-between relative z-10">
+                <div className={`rounded-full p-3 ${section.bg} backdrop-blur-sm`}>
+                  <section.icon className={`h-6 w-6 ${section.color}`} />
                 </div>
-                <div className="bg-muted/80 backdrop-blur-sm px-2 py-0.5 sm:py-1 lg:px-3 lg:py-2 rounded text-[8px] sm:text-[10px] lg:text-xs font-mono uppercase tracking-widest border border-white/10 whitespace-nowrap">
+                <div className="bg-muted/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-mono uppercase tracking-widest border border-white/10">
                   MOD-{section.id.toUpperCase()}
                 </div>
               </div>
 
               {/* Content */}
-              <div className="relative z-10 space-y-1 sm:space-y-2 lg:space-y-3">
-                <h3 className="font-tech text-lg sm:text-2xl lg:text-3xl font-bold leading-none drop-shadow-md">
+              <div className="relative z-10 space-y-2">
+                <h3 className="font-tech text-2xl font-bold leading-none drop-shadow-md">
                   {section.title}
                 </h3>
-                <div className="h-1 w-10 sm:w-12 lg:w-16 bg-gradient-to-r from-current to-transparent opacity-50" />
-                <p className="font-ui text-xs sm:text-sm lg:text-base text-gray-300 line-clamp-2 lg:line-clamp-3 group-hover:text-white transition-colors">
+                <div className="h-1 w-12 bg-gradient-to-r from-current to-transparent opacity-50" />
+                <p className="font-ui text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   {section.desc}
                 </p>
               </div>
