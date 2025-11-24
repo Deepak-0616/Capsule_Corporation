@@ -17,6 +17,7 @@ const NON_CANON_SERIES = [
 ];
 
 const CANON_MOVIES = [
+  { id: 23, title: "Dragon Ball Z: Battle of Gods", year: "2013" },
   { id: 17, title: "Dragon Ball Z: Resurrection 'F'", year: "2015" },
   { id: 18, title: "Dragon Ball Super: Broly", year: "2018" },
   { id: 19, title: "Dragon Ball Super: Super Hero", year: "2022" },
