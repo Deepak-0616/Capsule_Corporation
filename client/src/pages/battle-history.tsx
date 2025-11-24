@@ -17,6 +17,7 @@ import moroMagic from "@assets/image_1763925784868.png";
 import gasWeapon from "@assets/image_1763925883258.png";
 import gohanCellMax from "@assets/image_1763928344917.png";
 import gokuBeerus from "@assets/image_1763929394863.png";
+import vegetaFrieza from "@assets/image_1764003897759.png";
 import gokuHit from "@assets/image_1763929447390.png";
 
 const BATTLES = [
@@ -77,6 +78,17 @@ const BATTLES = [
   },
   {
     id: 6,
+    arc: "Resurrection F Saga",
+    title: "Vegeta vs Frieza",
+    year: "Age 779",
+    result: "Victory",
+    powerDiff: "Overwhelming",
+    desc: "The Prince of all Saiyans finally crushes his former tyrant master. Vegeta's true power awakened by Frieza's resurrection.",
+    color: "border-vegeta-blue",
+    image: vegetaFrieza
+  },
+  {
+    id: 7,
     arc: "Tournament of Power",
     title: "Goku vs Hit",
     year: "Age 780",
@@ -87,7 +99,7 @@ const BATTLES = [
     image: gokuHit
   },
   {
-    id: 7,
+    id: 8,
     arc: "Goku Black Saga",
     title: "Future Trunks vs Zamasu",
     year: "Age 796",
@@ -98,7 +110,7 @@ const BATTLES = [
     image: trunksZamasu
   },
   {
-    id: 8,
+    id: 9,
     arc: "ToP Saga",
     title: "Goku vs Jiren",
     year: "Age 780",
@@ -109,7 +121,7 @@ const BATTLES = [
     image: jirenClash
   },
   {
-    id: 9,
+    id: 10,
     arc: "Broly Saga",
     title: "Gogeta vs Broly",
     year: "Age 780",
@@ -120,7 +132,7 @@ const BATTLES = [
     image: brolyPower
   },
   {
-    id: 10,
+    id: 11,
     arc: "Moro Saga",
     title: "Goku vs Moro",
     year: "Age 781",
@@ -131,7 +143,7 @@ const BATTLES = [
     image: moroMagic
   },
   {
-    id: 11,
+    id: 12,
     arc: "Granolah Saga",
     title: "Goku & Vegeta vs Gas",
     year: "Age 781",
@@ -142,7 +154,7 @@ const BATTLES = [
     image: gasWeapon
   },
   {
-    id: 12,
+    id: 13,
     arc: "Dragon Ball Super: Super Hero",
     title: "Gohan vs Cell Max",
     year: "Age 782",
