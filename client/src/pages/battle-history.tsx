@@ -8,8 +8,8 @@ import brolyPower from "@assets/generated_images/broly_legendary_power.png";
 
 // Authentic Anime/Manga Battle Images
 import saiyanClash from "@assets/image_1763925498950.png";
-import namekClash from "@assets/generated_images/goku_vs_frieza_namek_manga.png";
-import cellClash from "@assets/generated_images/gohan_vs_cell_kamehameha_manga.png";
+import namekClash from "@assets/image_1764004106357.png";
+import cellClash from "@assets/image_1764004430175.png";
 import buuClash from "@assets/image_1763925555063.png";
 import trunksZamasu from "@assets/image_1763928173028.png";
 import jirenClash from "@assets/image_1763925714803.png";
