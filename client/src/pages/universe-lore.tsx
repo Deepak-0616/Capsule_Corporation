@@ -46,9 +46,9 @@ export default function UniverseLore() {
         {/* Data Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full content-start">
           {UNIVERSES.map((u) => (
-            <div key={u.id} className="bg-card/50 p-4 rounded-xl border border-border hover:border-primary transition-colors">
+            <div key={u.id} className="bg-card/50 p-4 rounded-xl border border-border hover:border-goku-orange hover:bg-orange-500/10 transition-all duration-300">
               <div className="flex justify-between items-start mb-2">
-                <h3 className="font-tech font-bold text-lg">{u.name}</h3>
+                <h3 className="font-tech font-bold text-lg hover:text-goku-orange transition-colors duration-300">{u.name}</h3>
                 <span className={`text-[10px] px-2 py-0.5 rounded font-mono uppercase ${u.rank.includes('Top') ? 'bg-green-500/20 text-green-400' : u.rank.includes('Low') ? 'bg-red-500/20 text-red-400' : 'bg-blue-500/20 text-blue-400'}`}>
                   Rank: {u.rank}
                 </span>
