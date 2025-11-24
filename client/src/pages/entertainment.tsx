@@ -58,7 +58,7 @@ export default function EntertainmentZone() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-tech uppercase text-primary">Entertainment Zone</h1>
+          <h1 className="text-3xl font-tech uppercase text-transparent bg-clip-text bg-gradient-to-r from-energy-yellow to-goku-orange">Entertainment Zone</h1>
           <p className="text-muted-foreground font-ui">Trivia & Fun Facts</p>
         </div>
       </div>

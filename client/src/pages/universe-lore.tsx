@@ -28,7 +28,7 @@ export default function UniverseLore() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-tech uppercase text-primary">Universe Lore</h1>
+          <h1 className="text-3xl font-tech uppercase text-transparent bg-clip-text bg-gradient-to-r from-energy-yellow to-goku-orange">Universe Lore</h1>
           <p className="text-muted-foreground font-ui">Cosmology & Deities</p>
         </div>
       </div>

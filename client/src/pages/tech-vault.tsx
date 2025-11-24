@@ -51,7 +51,7 @@ export default function TechVault() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-tech uppercase text-primary">Tech Vault</h1>
+          <h1 className="text-3xl font-tech uppercase text-transparent bg-clip-text bg-gradient-to-r from-energy-yellow to-goku-orange">Tech Vault</h1>
           <p className="text-muted-foreground font-ui">Capsule Corporation R&D</p>
         </div>
       </div>

@@ -165,7 +165,7 @@ export default function BattleHistory() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-tech uppercase text-primary">Battle History</h1>
+          <h1 className="text-3xl font-tech uppercase text-transparent bg-clip-text bg-gradient-to-r from-energy-yellow to-goku-orange">Battle History</h1>
           <p className="text-muted-foreground font-ui">Timeline of the Strongest</p>
         </div>
       </div>

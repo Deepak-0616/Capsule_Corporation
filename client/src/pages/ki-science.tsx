@@ -116,7 +116,7 @@ export default function KiScience() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-tech uppercase text-primary">Ki Science & Power Lab</h1>
+          <h1 className="text-3xl font-tech uppercase text-transparent bg-clip-text bg-gradient-to-r from-energy-yellow to-goku-orange">Ki Science & Power Lab</h1>
           <p className="text-muted-foreground font-ui">Transformation Analysis</p>
         </div>
       </div>
