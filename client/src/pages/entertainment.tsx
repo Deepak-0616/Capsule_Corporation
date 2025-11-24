@@ -76,7 +76,7 @@ export default function EntertainmentZone() {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             
             <div className="relative z-10 p-6 flex flex-col h-full justify-end">
-                <h3 className="font-tech text-xl font-bold mb-2 text-secondary">{fact.title}</h3>
+                <h3 className="font-tech text-xl font-bold mb-2 text-energy-yellow">{fact.title}</h3>
                 <p className="font-ui text-gray-300 group-hover:text-white transition-colors">{fact.text}</p>
             </div>
           </div>
