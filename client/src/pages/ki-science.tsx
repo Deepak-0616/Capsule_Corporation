@@ -121,13 +121,13 @@ export default function KiScience() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
         {TRANSFORMATIONS.map((form) => (
           <motion.div
             key={form.id}
-            whileHover={{ y: -5 }}
+            whileHover={{ y: -8 }}
             className={`
-              group relative overflow-hidden rounded-xl sm:rounded-2xl border-2 bg-card p-0.5 sm:p-1 h-72 sm:h-96
+              group relative overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl border-2 bg-card p-0.5 sm:p-1 h-72 sm:h-96 lg:h-[430px]
               ${form.border}
             `}
           >
@@ -141,10 +141,10 @@ export default function KiScience() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-4 sm:p-6">
-              <h3 className={`font-tech text-lg sm:text-2xl font-bold mb-1 ${form.color} drop-shadow-lg`}>{form.name}</h3>
-              <p className="text-xs font-mono text-white/80 mb-2 sm:mb-4 uppercase tracking-wider">User: {form.user}</p>
-              <p className="font-ui text-xs sm:text-sm text-gray-200 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+            <div className="relative z-10 h-full flex flex-col justify-end p-4 sm:p-6 lg:p-8">
+              <h3 className={`font-tech text-lg sm:text-2xl lg:text-3xl font-bold mb-1 lg:mb-2 ${form.color} drop-shadow-lg`}>{form.name}</h3>
+              <p className="text-xs lg:text-sm font-mono text-white/80 mb-2 sm:mb-4 lg:mb-5 uppercase tracking-wider">User: {form.user}</p>
+              <p className="font-ui text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
                 {form.desc}
               </p>
             </div>

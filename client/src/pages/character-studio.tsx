@@ -204,25 +204,25 @@ export default function CharacterStudio() {
         </div>
       </div>
 
-      <div className="space-y-3 sm:space-y-4">
+      <div className="space-y-3 sm:space-y-4 lg:space-y-5">
         {/* Character List with inline detail cards */}
         {CHARACTERS.map((char) => (
           <div key={char.id} className="space-y-1 sm:space-y-2 px-2 sm:px-0">
             <div
               onClick={() => setSelected(selected?.id === char.id ? null : char)}
               className={`
-                cursor-pointer p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 transition-all hover:scale-105
+                cursor-pointer p-3 sm:p-4 lg:p-5 rounded-lg sm:rounded-xl lg:rounded-2xl border-2 transition-all hover:scale-105 lg:hover:scale-102
                 ${selected?.id === char.id 
                   ? `${char.border} bg-muted` 
                   : 'border-transparent bg-card hover:border-muted-foreground/30'}
               `}
             >
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center justify-between gap-2 lg:gap-4">
                 <div className="min-w-0">
-                  <h3 className="font-tech font-bold text-base sm:text-lg truncate">{char.name}</h3>
-                  <p className="text-xs font-mono text-muted-foreground uppercase truncate">{char.form}</p>
+                  <h3 className="font-tech font-bold text-base sm:text-lg lg:text-xl truncate">{char.name}</h3>
+                  <p className="text-xs lg:text-sm font-mono text-muted-foreground uppercase truncate">{char.form}</p>
                 </div>
-                <ChevronDown className={`w-5 h-5 transition-transform shrink-0 ${selected?.id === char.id ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-5 h-5 lg:w-6 lg:h-6 transition-transform shrink-0 ${selected?.id === char.id ? 'rotate-180' : ''}`} />
               </div>
             </div>
 
@@ -235,39 +235,39 @@ export default function CharacterStudio() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-card rounded-2xl sm:rounded-3xl border-2 border-border shadow-2xl relative overflow-hidden"
+                  className="bg-card rounded-2xl sm:rounded-3xl lg:rounded-4xl border-2 border-border shadow-2xl lg:shadow-3xl relative overflow-hidden"
                 >
                   {/* Character Image Container */}
-                  <div className="relative w-full h-48 sm:h-64 overflow-hidden bg-gradient-to-b from-muted/50 to-card flex items-center justify-center border-b border-border">
+                  <div className="relative w-full h-48 sm:h-64 lg:h-80 overflow-hidden bg-gradient-to-b from-muted/50 to-card flex items-center justify-center border-b border-border">
                     <img 
                       src={char.image} 
                       alt={char.name}
                       className="h-full w-full object-cover opacity-90"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                    <span className="absolute -right-10 -top-10 text-6xl font-tech font-black text-muted/5 pointer-events-none select-none uppercase">
+                    <span className="absolute -right-10 -top-10 text-6xl lg:text-8xl font-tech font-black text-muted/5 pointer-events-none select-none uppercase">
                       {char.id}
                     </span>
                   </div>
 
                   {/* Info Section */}
-                  <div className="p-8 space-y-6">
+                  <div className="p-6 sm:p-8 lg:p-10 space-y-5 sm:space-y-6 lg:space-y-8">
                     <div>
-                      <h2 className={`text-4xl font-action mb-2 ${char.color} text-stroke-sm text-transparent bg-clip-text bg-gradient-to-br from-current to-foreground`}>
+                      <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-action mb-2 lg:mb-3 ${char.color} text-stroke-sm text-transparent bg-clip-text bg-gradient-to-br from-current to-foreground`}>
                         {char.name}
                       </h2>
-                      <span className="inline-block px-3 py-1 rounded-full bg-muted text-xs font-mono uppercase tracking-wider border border-white/10">
+                      <span className="inline-block px-3 py-1 lg:px-4 lg:py-2 rounded-full bg-muted text-xs lg:text-sm font-mono uppercase tracking-wider border border-white/10">
                         {char.form}
                       </span>
                     </div>
                     
-                    <p className="font-ui text-sm leading-relaxed text-muted-foreground">
+                    <p className="font-ui text-sm lg:text-base leading-relaxed text-muted-foreground">
                       {char.desc}
                     </p>
 
                     {/* Stats Section */}
-                    <div className="space-y-6 pt-6 border-t border-border/50">
-                      <div className="grid grid-cols-3 gap-4">
+                    <div className="space-y-6 lg:space-y-8 pt-6 lg:pt-8 border-t border-border/50">
+                      <div className="grid grid-cols-3 gap-4 lg:gap-6">
                         <div className="space-y-2">
                           <div className="flex justify-between text-xs font-bold uppercase">
                             <span className="flex items-center gap-1"><Zap className="w-3 h-3 text-energy-yellow" /> Power</span>
