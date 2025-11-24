@@ -34,7 +34,7 @@ const COMPLETE_WATCH_ORDER = [
   { id: 19, title: "Dragon Ball Super: Super Hero", canon: true, type: "Movie", year: "2022" },
   
   // Daima Series
-  { id: 20, title: "Dragon Ball Daima", canon: true, type: "Series", year: "2024-Present", eps: "Ongoing" },
+  { id: 20, title: "Dragon Ball Daima", canon: true, type: "Series", year: "2024", eps: "41 eps" },
 ];
 
 export default function SeriesWatchOrder() {
