@@ -13,7 +13,7 @@ export default function Tribute() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-tech uppercase text-primary">Akira Toriyama</h1>
+          <h1 className="text-3xl font-tech uppercase text-transparent bg-clip-text bg-gradient-to-r from-energy-yellow to-goku-orange">Akira Toriyama</h1>
           <p className="text-muted-foreground font-ui">1955 - 2024</p>
         </div>
       </div>
@@ -40,16 +40,16 @@ export default function Tribute() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-8 text-center">
-        <div className="p-6 rounded-xl bg-card/50 border border-border">
-          <h3 className="font-tech text-2xl text-primary mb-2">40 Years</h3>
+        <div className="p-6 rounded-xl bg-card/50 border border-border hover:border-goku-orange hover:bg-orange-500/10 transition-all duration-300">
+          <h3 className="font-tech text-2xl text-primary mb-2 hover:text-goku-orange transition-colors duration-300">40 Years</h3>
           <p className="font-ui text-muted-foreground">Of serialization and legacy.</p>
         </div>
-        <div className="p-6 rounded-xl bg-card/50 border border-border">
-          <h3 className="font-tech text-2xl text-primary mb-2">519 Chapters</h3>
+        <div className="p-6 rounded-xl bg-card/50 border border-border hover:border-goku-orange hover:bg-orange-500/10 transition-all duration-300">
+          <h3 className="font-tech text-2xl text-primary mb-2 hover:text-goku-orange transition-colors duration-300">519 Chapters</h3>
           <p className="font-ui text-muted-foreground">Of the original manga run.</p>
         </div>
-        <div className="p-6 rounded-xl bg-card/50 border border-border">
-          <h3 className="font-tech text-2xl text-primary mb-2">Infinite</h3>
+        <div className="p-6 rounded-xl bg-card/50 border border-border hover:border-goku-orange hover:bg-orange-500/10 transition-all duration-300">
+          <h3 className="font-tech text-2xl text-primary mb-2 hover:text-goku-orange transition-colors duration-300">Infinite</h3>
           <p className="font-ui text-muted-foreground">Inspiration to creators worldwide.</p>
         </div>
       </div>
