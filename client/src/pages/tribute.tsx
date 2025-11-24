@@ -18,14 +18,14 @@ export default function Tribute() {
         </div>
       </div>
 
-      <div className="relative rounded-3xl overflow-hidden border-4 border-white/10 bg-black shadow-2xl group">
+      <div className="relative rounded-3xl overflow-hidden border-4 border-white/10 bg-black shadow-2xl group max-w-2xl mx-auto">
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
         {/* Slow zoom effect */}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden h-96">
             <img 
                 src={portrait} 
                 alt="Akira Toriyama Tribute" 
-                className="w-full h-auto object-cover opacity-90 transform transition-transform duration-[20s] group-hover:scale-110" 
+                className="w-full h-full object-cover opacity-90 transform transition-transform duration-[20s] group-hover:scale-110" 
             />
         </div>
         
