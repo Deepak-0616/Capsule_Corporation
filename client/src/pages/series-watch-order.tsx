@@ -4,11 +4,13 @@ import { ArrowLeft, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const COMPLETE_WATCH_ORDER = [
-  // Main Series
+  // Canon Path: DB -> DBZ -> Daima -> DBS
   { id: 1, title: "Dragon Ball", canon: true, type: "Series", year: "1986-1989", eps: "153 eps" },
   { id: 2, title: "Dragon Ball Z", canon: true, type: "Series", year: "1989-1996", eps: "291 eps" },
+  { id: 20, title: "Dragon Ball Daima", canon: true, type: "Series", year: "2024", eps: "20 eps" },
+  { id: 16, title: "Dragon Ball Super", canon: true, type: "Series", year: "2015-2017", eps: "131 eps" },
   
-  // DBZ Movies (Mixed Canon)
+  // DBZ Movies (Non-Canon)
   { id: 3, title: "Dragon Ball Z: Dead Zone", canon: false, type: "Movie", year: "1989" },
   { id: 4, title: "Dragon Ball Z: The World's Strongest", canon: false, type: "Movie", year: "1990" },
   { id: 5, title: "Dragon Ball Z: The Tree of Might", canon: false, type: "Movie", year: "1990" },
@@ -22,19 +24,13 @@ const COMPLETE_WATCH_ORDER = [
   { id: 13, title: "Dragon Ball Z: Fusion Reborn", canon: false, type: "Movie", year: "1995" },
   { id: 14, title: "Dragon Ball Z: Wrath of the Dragon", canon: false, type: "Movie", year: "1995" },
   
-  // GT Series
+  // GT Series (Non-Canon)
   { id: 15, title: "Dragon Ball GT", canon: false, type: "Series", year: "1996-1997", eps: "64 eps" },
   
-  // Super Series
-  { id: 16, title: "Dragon Ball Super", canon: true, type: "Series", year: "2015-2017", eps: "131 eps" },
-  
-  // Super Movies
+  // Super Movies (Canon)
   { id: 17, title: "Dragon Ball Z: Resurrection 'F'", canon: true, type: "Movie", year: "2015" },
   { id: 18, title: "Dragon Ball Super: Broly", canon: true, type: "Movie", year: "2018" },
   { id: 19, title: "Dragon Ball Super: Super Hero", canon: true, type: "Movie", year: "2022" },
-  
-  // Daima Series
-  { id: 20, title: "Dragon Ball Daima", canon: true, type: "Series", year: "2024", eps: "20 eps" },
 ];
 
 export default function SeriesWatchOrder() {
@@ -134,7 +130,7 @@ export default function SeriesWatchOrder() {
       <div className="mt-12 p-6 rounded-xl border-2 border-muted-foreground/20 bg-muted/5 space-y-4">
         <h3 className="font-tech text-lg uppercase text-primary">Recommended Watch Order:</h3>
         <div className="space-y-2 text-sm font-ui text-muted-foreground">
-          <p><strong>Canon Path (Official Story):</strong> Dragon Ball → Dragon Ball Z → Dragon Ball Super → Dragon Ball Daima</p>
+          <p><strong>Canon Path (Official Story):</strong> Dragon Ball → Dragon Ball Z → Dragon Ball Daima → Dragon Ball Super</p>
           <p><strong>Complete Experience:</strong> Follow canon series, watch non-canon movies between arcs for side stories</p>
           <p><strong>Movies Note:</strong> Most DBZ movies can be watched anytime during that saga. Super movies fit before/after Tournament of Power</p>
         </div>
