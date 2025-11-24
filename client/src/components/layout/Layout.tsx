@@ -37,15 +37,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
       
       {/* Header */}
       <header className="relative z-50 border-b border-border/40 bg-background/80 backdrop-blur-md sticky top-0">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="container mx-auto px-3 sm:px-4 h-14 sm:h-16 flex items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer group">
-              <div className="relative w-10 h-10 flex items-center justify-center bg-capsule-dark rounded-full border-2 border-goku-orange group-hover:animate-spin-slow transition-transform">
-                <span className="text-capsule-white font-tech font-bold text-xl">C</span>
+              <div className="relative w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-capsule-dark rounded-full border-2 border-goku-orange group-hover:animate-spin-slow transition-transform">
+                <span className="text-capsule-white font-tech font-bold text-lg sm:text-xl">C</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-tech text-lg leading-none tracking-widest uppercase">Capsule</span>
-                <span className="font-ui text-xs tracking-[0.3em] text-muted-foreground uppercase">Corp.</span>
+                <span className="font-tech text-sm sm:text-lg leading-none tracking-widest uppercase">Capsule</span>
+                <span className="font-ui text-xs tracking-[0.2em] sm:tracking-[0.3em] text-muted-foreground uppercase">Corp.</span>
               </div>
             </div>
           </Link>
@@ -98,14 +98,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 relative z-10 container mx-auto px-4 py-8">
+      <main className="flex-1 relative z-10 container mx-auto px-3 sm:px-4 py-4 sm:py-8 w-full">
         {children}
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-border/40 bg-muted/30 py-8 mt-auto">
-        <div className="container mx-auto px-4 text-center">
-          <p className="font-ui text-sm text-muted-foreground">
+      <footer className="relative z-10 border-t border-border/40 bg-muted/30 py-6 sm:py-8 mt-auto">
+        <div className="container mx-auto px-3 sm:px-4 text-center">
+          <p className="font-ui text-xs sm:text-sm text-muted-foreground">
             CAPSULE CORPORATION © 784 AGE. ALL RIGHTS RESERVED.
           </p>
           <p className="text-xs text-muted-foreground/50 mt-2">

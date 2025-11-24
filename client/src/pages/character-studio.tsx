@@ -189,40 +189,40 @@ export default function CharacterStudio() {
   const [selected, setSelected] = useState<typeof CHARACTERS[0] | null>(null);
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-500">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
+    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-500">
+      <div className="flex items-center justify-between px-2 sm:px-0">
+        <div className="flex items-center gap-2 sm:gap-4 min-w-0">
           <Link href="/">
-            <Button variant="outline" size="icon">
+            <Button variant="outline" size="icon" className="h-9 w-9 sm:h-10 sm:w-10 shrink-0">
               <ArrowLeft className="h-4 w-4" />
             </Button>
           </Link>
-          <div>
-            <h1 className="text-3xl font-tech uppercase text-goku-orange">Character Studio</h1>
-            <p className="text-muted-foreground font-ui">Z Fighters & Villains Database</p>
+          <div className="min-w-0">
+            <h1 className="text-2xl sm:text-3xl font-tech uppercase text-goku-orange truncate">Character Studio</h1>
+            <p className="text-xs sm:text-sm text-muted-foreground font-ui truncate">Z Fighters & Villains Database</p>
           </div>
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {/* Character List with inline detail cards */}
         {CHARACTERS.map((char) => (
-          <div key={char.id} className="space-y-2">
+          <div key={char.id} className="space-y-1 sm:space-y-2 px-2 sm:px-0">
             <div
               onClick={() => setSelected(selected?.id === char.id ? null : char)}
               className={`
-                cursor-pointer p-4 rounded-xl border-2 transition-all hover:scale-105
+                cursor-pointer p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 transition-all hover:scale-105
                 ${selected?.id === char.id 
                   ? `${char.border} bg-muted` 
                   : 'border-transparent bg-card hover:border-muted-foreground/30'}
               `}
             >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-tech font-bold text-lg">{char.name}</h3>
-                  <p className="text-xs font-mono text-muted-foreground uppercase">{char.form}</p>
+              <div className="flex items-center justify-between gap-2">
+                <div className="min-w-0">
+                  <h3 className="font-tech font-bold text-base sm:text-lg truncate">{char.name}</h3>
+                  <p className="text-xs font-mono text-muted-foreground uppercase truncate">{char.form}</p>
                 </div>
-                <ChevronDown className={`w-5 h-5 transition-transform ${selected?.id === char.id ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-5 h-5 transition-transform shrink-0 ${selected?.id === char.id ? 'rotate-180' : ''}`} />
               </div>
             </div>
 
@@ -235,10 +235,10 @@ export default function CharacterStudio() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-card rounded-3xl border-2 border-border shadow-2xl relative overflow-hidden"
+                  className="bg-card rounded-2xl sm:rounded-3xl border-2 border-border shadow-2xl relative overflow-hidden"
                 >
                   {/* Character Image Container */}
-                  <div className="relative w-full h-64 overflow-hidden bg-gradient-to-b from-muted/50 to-card flex items-center justify-center border-b border-border">
+                  <div className="relative w-full h-48 sm:h-64 overflow-hidden bg-gradient-to-b from-muted/50 to-card flex items-center justify-center border-b border-border">
                     <img 
                       src={char.image} 
                       alt={char.name}

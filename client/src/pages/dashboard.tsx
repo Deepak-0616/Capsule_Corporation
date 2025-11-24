@@ -123,16 +123,16 @@ const item = {
 
 export default function Dashboard() {
   return (
-    <div className="space-y-8">
-      <div className="text-center space-y-4 py-8">
+    <div className="space-y-4 sm:space-y-8">
+      <div className="text-center space-y-2 sm:space-y-4 py-4 sm:py-8">
         <motion.h1 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="text-5xl md:text-7xl font-tech uppercase tracking-tighter text-stroke-sm text-transparent bg-clip-text bg-gradient-to-br from-foreground to-muted-foreground"
+          className="text-3xl sm:text-5xl md:text-7xl font-tech uppercase tracking-tighter text-stroke-sm text-transparent bg-clip-text bg-gradient-to-br from-foreground to-muted-foreground"
         >
           Capsule Corp
         </motion.h1>
-        <p className="font-ui text-xl text-muted-foreground max-w-2xl mx-auto">
+        <p className="font-ui text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
           Welcome to the ultimate database.
         </p>
       </div>
@@ -141,7 +141,7 @@ export default function Dashboard() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
       >
         {SECTIONS.map((section) => (
           <Link key={section.id} href={section.link}>
@@ -150,8 +150,8 @@ export default function Dashboard() {
               whileHover={{ scale: 1.02, translateY: -5 }}
               whileTap={{ scale: 0.98 }}
               className={`
-                group relative h-64 cursor-pointer overflow-hidden rounded-3xl border-2 
-                bg-card p-6 transition-colors hover:shadow-xl capsule-shadow
+                group relative h-56 sm:h-64 cursor-pointer overflow-hidden rounded-2xl sm:rounded-3xl border-2 
+                bg-card p-4 sm:p-6 transition-colors hover:shadow-xl capsule-shadow
                 flex flex-col justify-between
                 ${section.border}
               `}
@@ -171,22 +171,22 @@ export default function Dashboard() {
               />
 
               {/* Header */}
-              <div className="flex items-start justify-between relative z-10">
-                <div className={`rounded-full p-3 ${section.bg} backdrop-blur-sm`}>
-                  <section.icon className={`h-6 w-6 ${section.color}`} />
+              <div className="flex items-start justify-between relative z-10 gap-2">
+                <div className={`rounded-full p-2 sm:p-3 ${section.bg} backdrop-blur-sm shrink-0`}>
+                  <section.icon className={`h-5 sm:h-6 w-5 sm:w-6 ${section.color}`} />
                 </div>
-                <div className="bg-muted/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-mono uppercase tracking-widest border border-white/10">
+                <div className="bg-muted/80 backdrop-blur-sm px-2 py-0.5 sm:py-1 rounded text-[8px] sm:text-[10px] font-mono uppercase tracking-widest border border-white/10 whitespace-nowrap">
                   MOD-{section.id.toUpperCase()}
                 </div>
               </div>
 
               {/* Content */}
-              <div className="relative z-10 space-y-2">
-                <h3 className="font-tech text-2xl font-bold leading-none drop-shadow-md">
+              <div className="relative z-10 space-y-1 sm:space-y-2">
+                <h3 className="font-tech text-lg sm:text-2xl font-bold leading-none drop-shadow-md">
                   {section.title}
                 </h3>
-                <div className="h-1 w-12 bg-gradient-to-r from-current to-transparent opacity-50" />
-                <p className="font-ui text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
+                <div className="h-1 w-10 sm:w-12 bg-gradient-to-r from-current to-transparent opacity-50" />
+                <p className="font-ui text-xs sm:text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   {section.desc}
                 </p>
               </div>

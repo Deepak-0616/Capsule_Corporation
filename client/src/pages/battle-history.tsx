@@ -156,25 +156,25 @@ const BATTLES = [
 
 export default function BattleHistory() {
   return (
-    <div className="space-y-8 animate-in fade-in duration-700 pb-20">
+    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-700 pb-12 sm:pb-20">
        {/* Header */}
-       <div className="flex items-center gap-4 relative z-10">
+       <div className="flex items-center gap-2 sm:gap-4 relative z-10 px-2 sm:px-0">
         <Link href="/">
-          <Button variant="outline" size="icon">
+          <Button variant="outline" size="icon" className="h-9 w-9 sm:h-10 sm:w-10">
             <ArrowLeft className="h-4 w-4" />
           </Button>
         </Link>
-        <div>
-          <h1 className="text-3xl font-tech uppercase text-primary">Battle History</h1>
-          <p className="text-muted-foreground font-ui">Timeline of the Strongest</p>
+        <div className="min-w-0">
+          <h1 className="text-2xl sm:text-3xl font-tech uppercase text-primary truncate">Battle History</h1>
+          <p className="text-xs sm:text-sm text-muted-foreground font-ui">Timeline of the Strongest</p>
         </div>
       </div>
 
-      <div className="relative max-w-4xl mx-auto mt-12">
+      <div className="relative max-w-4xl mx-auto mt-8 sm:mt-12 px-2 sm:px-0">
         {/* Center Line */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-primary/50 to-transparent -translate-x-1/2" />
+        <div className="absolute left-3 sm:left-4 md:left-1/2 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-transparent via-primary/50 to-transparent -translate-x-1/2" />
 
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           {BATTLES.map((battle, index) => (
             <motion.div
               key={battle.id}
@@ -182,12 +182,12 @@ export default function BattleHistory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`flex flex-col md:flex-row gap-8 items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+              className={`flex flex-col md:flex-row gap-4 sm:gap-8 items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
             >
               {/* Content Card */}
               <div className="flex-1 w-full">
                 <div className={`
-                  bg-card p-6 rounded-2xl border-l-4 shadow-lg relative overflow-hidden group hover:scale-105 transition-transform duration-300
+                  bg-card p-4 sm:p-6 rounded-2xl border-l-4 shadow-lg relative overflow-hidden group hover:scale-105 transition-transform duration-300
                   ${battle.color}
                 `}>
                   {/* Background Image */}
@@ -198,13 +198,13 @@ export default function BattleHistory() {
                   {/* Dark overlay for readability */}
                   <div className="absolute inset-0 bg-black/60 z-0" />
 
-                  <div className="flex justify-between items-start mb-2 relative z-10">
-                    <span className="text-xs font-mono uppercase bg-muted/80 backdrop-blur px-2 py-1 rounded">{battle.arc}</span>
-                    <span className="text-xs font-mono text-muted-foreground">{battle.year}</span>
+                  <div className="flex justify-between items-start mb-2 gap-2 relative z-10 text-xs">
+                    <span className="font-mono uppercase bg-muted/80 backdrop-blur px-2 py-0.5 rounded whitespace-nowrap">{battle.arc}</span>
+                    <span className="font-mono text-muted-foreground text-[10px]">{battle.year}</span>
                   </div>
                   
-                  <h3 className="font-tech text-2xl font-bold mb-2 relative z-10 drop-shadow-md">{battle.title}</h3>
-                  <p className="font-ui text-gray-300 text-sm mb-4 relative z-10">{battle.desc}</p>
+                  <h3 className="font-tech text-lg sm:text-2xl font-bold mb-2 relative z-10 drop-shadow-md">{battle.title}</h3>
+                  <p className="font-ui text-gray-300 text-xs sm:text-sm mb-4 relative z-10 line-clamp-3">{battle.desc}</p>
                   
                   <div className="flex gap-4 text-xs font-bold uppercase relative z-10">
                     <div className="flex items-center gap-1 text-green-400">
@@ -218,8 +218,8 @@ export default function BattleHistory() {
               </div>
 
               {/* Timeline Node */}
-              <div className="relative z-10 flex items-center justify-center w-12 h-12 shrink-0">
-                <div className={`w-4 h-4 rounded-full bg-primary border-4 border-background shadow-[0_0_15px_rgba(248,91,26,0.5)] ${battle.color.replace('border-', 'bg-')}`} />
+              <div className="relative z-10 flex items-center justify-center w-8 sm:w-12 h-8 sm:h-12 shrink-0">
+                <div className={`w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary border-3 sm:border-4 border-background shadow-[0_0_15px_rgba(248,91,26,0.5)] ${battle.color.replace('border-', 'bg-')}`} />
                 <div className="absolute w-full h-full rounded-full border border-primary/30 animate-ping opacity-20" />
               </div>
 

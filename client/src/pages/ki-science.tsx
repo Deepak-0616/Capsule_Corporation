@@ -108,26 +108,26 @@ const TRANSFORMATIONS = [
 
 export default function KiScience() {
   return (
-    <div className="space-y-8 animate-in fade-in duration-700">
-       <div className="flex items-center gap-4">
+    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-700 px-2 sm:px-0">
+       <div className="flex items-center gap-2 sm:gap-4 min-w-0">
         <Link href="/">
-          <Button variant="outline" size="icon">
+          <Button variant="outline" size="icon" className="h-9 w-9 sm:h-10 sm:w-10 shrink-0">
             <ArrowLeft className="h-4 w-4" />
           </Button>
         </Link>
-        <div>
-          <h1 className="text-3xl font-tech uppercase text-primary">Ki Science & Power Lab</h1>
-          <p className="text-muted-foreground font-ui">Transformation Analysis</p>
+        <div className="min-w-0">
+          <h1 className="text-2xl sm:text-3xl font-tech uppercase text-primary truncate">Ki Science & Power Lab</h1>
+          <p className="text-xs sm:text-sm text-muted-foreground font-ui">Transformation Analysis</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {TRANSFORMATIONS.map((form) => (
           <motion.div
             key={form.id}
             whileHover={{ y: -5 }}
             className={`
-              group relative overflow-hidden rounded-2xl border-2 bg-card p-1 h-96
+              group relative overflow-hidden rounded-xl sm:rounded-2xl border-2 bg-card p-0.5 sm:p-1 h-72 sm:h-96
               ${form.border}
             `}
           >
@@ -141,10 +141,10 @@ export default function KiScience() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-6">
-              <h3 className={`font-tech text-2xl font-bold mb-1 ${form.color} drop-shadow-lg`}>{form.name}</h3>
-              <p className="text-xs font-mono text-white/80 mb-4 uppercase tracking-wider">User: {form.user}</p>
-              <p className="font-ui text-sm text-gray-200 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+            <div className="relative z-10 h-full flex flex-col justify-end p-4 sm:p-6">
+              <h3 className={`font-tech text-lg sm:text-2xl font-bold mb-1 ${form.color} drop-shadow-lg`}>{form.name}</h3>
+              <p className="text-xs font-mono text-white/80 mb-2 sm:mb-4 uppercase tracking-wider">User: {form.user}</p>
+              <p className="font-ui text-xs sm:text-sm text-gray-200 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
                 {form.desc}
               </p>
             </div>
