@@ -156,21 +156,21 @@ const BATTLES = [
 
 export default function BattleHistory() {
   return (
-    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-700 pb-12 sm:pb-20">
+    <div className="space-y-8 animate-in fade-in duration-700 pb-12">
        {/* Header */}
-       <div className="flex items-center gap-2 sm:gap-4 relative z-10 px-2 sm:px-0">
+       <div className="flex items-center gap-4 relative z-10">
         <Link href="/">
-          <Button variant="outline" size="icon" className="h-9 w-9 sm:h-10 sm:w-10">
+          <Button variant="outline" size="icon">
             <ArrowLeft className="h-4 w-4" />
           </Button>
         </Link>
-        <div className="min-w-0">
-          <h1 className="text-2xl sm:text-3xl font-tech uppercase text-primary truncate">Battle History</h1>
-          <p className="text-xs sm:text-sm text-muted-foreground font-ui">Timeline of the Strongest</p>
+        <div>
+          <h1 className="text-3xl font-tech uppercase text-primary">Battle History</h1>
+          <p className="text-muted-foreground font-ui">Timeline of the Strongest</p>
         </div>
       </div>
 
-      <div className="relative max-w-4xl mx-auto mt-12 px-2 sm:px-0">
+      <div className="relative max-w-4xl mx-auto mt-8">
         {/* Center Line */}
         <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-primary/50 to-transparent -translate-x-1/2" />
 

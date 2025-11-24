@@ -108,16 +108,16 @@ const TRANSFORMATIONS = [
 
 export default function KiScience() {
   return (
-    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-700 px-2 sm:px-0">
-       <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+    <div className="space-y-8 animate-in fade-in duration-700">
+       <div className="flex items-center gap-4">
         <Link href="/">
-          <Button variant="outline" size="icon" className="h-9 w-9 sm:h-10 sm:w-10 shrink-0">
+          <Button variant="outline" size="icon">
             <ArrowLeft className="h-4 w-4" />
           </Button>
         </Link>
-        <div className="min-w-0">
-          <h1 className="text-2xl sm:text-3xl font-tech uppercase text-primary truncate">Ki Science & Power Lab</h1>
-          <p className="text-xs sm:text-sm text-muted-foreground font-ui">Transformation Analysis</p>
+        <div>
+          <h1 className="text-3xl font-tech uppercase text-primary">Ki Science & Power Lab</h1>
+          <p className="text-muted-foreground font-ui">Transformation Analysis</p>
         </div>
       </div>
 

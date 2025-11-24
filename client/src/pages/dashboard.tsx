@@ -123,8 +123,8 @@ const item = {
 
 export default function Dashboard() {
   return (
-    <div className="space-y-4 sm:space-y-8">
-      <div className="text-center space-y-2 sm:space-y-4 py-4 sm:py-8">
+    <div className="space-y-8">
+      <div className="text-center space-y-4 py-8">
         <motion.h1 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -132,7 +132,7 @@ export default function Dashboard() {
         >
           Capsule Corp
         </motion.h1>
-        <p className="font-ui text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
+        <p className="font-ui text-xl text-muted-foreground max-w-2xl mx-auto">
           Welcome to the ultimate database.
         </p>
       </div>

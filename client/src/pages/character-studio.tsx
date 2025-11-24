@@ -189,17 +189,17 @@ export default function CharacterStudio() {
   const [selected, setSelected] = useState<typeof CHARACTERS[0] | null>(null);
 
   return (
-    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-500">
-      <div className="flex items-center justify-between px-2 sm:px-0">
-        <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+    <div className="space-y-8 animate-in fade-in duration-500">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
           <Link href="/">
-            <Button variant="outline" size="icon" className="h-9 w-9 sm:h-10 sm:w-10 shrink-0">
+            <Button variant="outline" size="icon">
               <ArrowLeft className="h-4 w-4" />
             </Button>
           </Link>
-          <div className="min-w-0">
-            <h1 className="text-2xl sm:text-3xl font-tech uppercase text-goku-orange truncate">Character Studio</h1>
-            <p className="text-xs sm:text-sm text-muted-foreground font-ui truncate">Z Fighters & Villains Database</p>
+          <div>
+            <h1 className="text-3xl font-tech uppercase text-goku-orange">Character Studio</h1>
+            <p className="text-muted-foreground font-ui">Z Fighters & Villains Database</p>
           </div>
         </div>
       </div>
