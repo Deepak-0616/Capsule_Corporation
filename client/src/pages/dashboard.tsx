@@ -19,6 +19,7 @@ import uiGoku from "@assets/image_1763926381541.png";
 import zeno from "@assets/image_1763926470664.png";
 import gokuEating from "@assets/generated_images/goku_eating_ramen.png";
 import characterGroup from "@assets/image_1763930758545.png";
+import timelineImg from "../assets/dragon_ball_chronological_timeline.png";
 
 const SECTIONS = [
   {
@@ -115,7 +116,7 @@ const SECTIONS = [
     border: "border-purple-400/30",
     link: "/series-order",
     desc: "Complete Dragon Ball timeline with canon and non-canon series + all movies.",
-    image: auraBg
+    image: timelineImg
   }
 ];
 
