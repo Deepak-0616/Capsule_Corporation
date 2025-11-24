@@ -12,8 +12,7 @@ const CANON_SERIES = [
 
 const NON_CANON_SERIES = [
   { id: 15, title: "Dragon Ball GT", year: "1996-1997", eps: "64 eps" },
-  { id: 21, title: "Dragon Ball Heroes", year: "2018-2021", eps: "20 eps" },
-  { id: 22, title: "Super Dragon Ball Heroes", year: "2018-Present", eps: "32+ eps" },
+  { id: 22, title: "Super Dragon Ball Heroes", year: "2018-Present", eps: "56 eps" },
 ];
 
 const CANON_MOVIES = [
