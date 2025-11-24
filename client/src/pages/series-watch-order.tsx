@@ -3,35 +3,83 @@ import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const COMPLETE_WATCH_ORDER = [
-  // Canon Path: DB -> DBZ -> Daima -> DBS
-  { id: 1, title: "Dragon Ball", canon: true, type: "Series", year: "1986-1989", eps: "153 eps" },
-  { id: 2, title: "Dragon Ball Z", canon: true, type: "Series", year: "1989-1996", eps: "291 eps" },
-  { id: 20, title: "Dragon Ball Daima", canon: true, type: "Series", year: "2024", eps: "20 eps" },
-  { id: 16, title: "Dragon Ball Super", canon: true, type: "Series", year: "2015-2017", eps: "131 eps" },
-  
-  // DBZ Movies (Non-Canon)
-  { id: 3, title: "Dragon Ball Z: Dead Zone", canon: false, type: "Movie", year: "1989" },
-  { id: 4, title: "Dragon Ball Z: The World's Strongest", canon: false, type: "Movie", year: "1990" },
-  { id: 5, title: "Dragon Ball Z: The Tree of Might", canon: false, type: "Movie", year: "1990" },
-  { id: 6, title: "Dragon Ball Z: Lord Slug", canon: false, type: "Movie", year: "1991" },
-  { id: 7, title: "Dragon Ball Z: Cooler's Revenge", canon: false, type: "Movie", year: "1991" },
-  { id: 8, title: "Dragon Ball Z: Return of Cooler", canon: false, type: "Movie", year: "1992" },
-  { id: 9, title: "Dragon Ball Z: Super Android 13", canon: false, type: "Movie", year: "1992" },
-  { id: 10, title: "Dragon Ball Z: Broly - The Legendary Super Saiyan", canon: false, type: "Movie", year: "1993" },
-  { id: 11, title: "Dragon Ball Z: Bojack Unbound", canon: false, type: "Movie", year: "1993" },
-  { id: 12, title: "Dragon Ball Z: Broly - Second Coming", canon: false, type: "Movie", year: "1994" },
-  { id: 13, title: "Dragon Ball Z: Fusion Reborn", canon: false, type: "Movie", year: "1995" },
-  { id: 14, title: "Dragon Ball Z: Wrath of the Dragon", canon: false, type: "Movie", year: "1995" },
-  
-  // GT Series (Non-Canon)
-  { id: 15, title: "Dragon Ball GT", canon: false, type: "Series", year: "1996-1997", eps: "64 eps" },
-  
-  // Super Movies (Canon)
-  { id: 17, title: "Dragon Ball Z: Resurrection 'F'", canon: true, type: "Movie", year: "2015" },
-  { id: 18, title: "Dragon Ball Super: Broly", canon: true, type: "Movie", year: "2018" },
-  { id: 19, title: "Dragon Ball Super: Super Hero", canon: true, type: "Movie", year: "2022" },
+const CANON_SERIES = [
+  { id: 1, title: "Dragon Ball", year: "1986-1989", eps: "153 eps" },
+  { id: 2, title: "Dragon Ball Z", year: "1989-1996", eps: "291 eps" },
+  { id: 20, title: "Dragon Ball Daima", year: "2024", eps: "20 eps" },
+  { id: 16, title: "Dragon Ball Super", year: "2015-2017", eps: "131 eps" },
 ];
+
+const NON_CANON_SERIES = [
+  { id: 15, title: "Dragon Ball GT", year: "1996-1997", eps: "64 eps" },
+  { id: 21, title: "Dragon Ball Heroes", year: "2018-2021", eps: "20 eps" },
+  { id: 22, title: "Super Dragon Ball Heroes", year: "2018-Present", eps: "32+ eps" },
+];
+
+const CANON_MOVIES = [
+  { id: 17, title: "Dragon Ball Z: Resurrection 'F'", year: "2015" },
+  { id: 18, title: "Dragon Ball Super: Broly", year: "2018" },
+  { id: 19, title: "Dragon Ball Super: Super Hero", year: "2022" },
+];
+
+const NON_CANON_MOVIES = [
+  { id: 3, title: "Dragon Ball Z: Dead Zone", year: "1989" },
+  { id: 4, title: "Dragon Ball Z: The World's Strongest", year: "1990" },
+  { id: 5, title: "Dragon Ball Z: The Tree of Might", year: "1990" },
+  { id: 6, title: "Dragon Ball Z: Lord Slug", year: "1991" },
+  { id: 7, title: "Dragon Ball Z: Cooler's Revenge", year: "1991" },
+  { id: 8, title: "Dragon Ball Z: Return of Cooler", year: "1992" },
+  { id: 9, title: "Dragon Ball Z: Super Android 13", year: "1992" },
+  { id: 10, title: "Dragon Ball Z: Broly - The Legendary Super Saiyan", year: "1993" },
+  { id: 11, title: "Dragon Ball Z: Bojack Unbound", year: "1993" },
+  { id: 12, title: "Dragon Ball Z: Broly - Second Coming", year: "1994" },
+  { id: 13, title: "Dragon Ball Z: Fusion Reborn", year: "1995" },
+  { id: 14, title: "Dragon Ball Z: Wrath of the Dragon", year: "1995" },
+];
+
+const EntryCard = ({ entry, isCanon }: { entry: any; isCanon: boolean }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.3 }}
+    className={`
+      p-4 rounded-xl border-2 backdrop-blur-sm transition-all hover:shadow-lg
+      ${isCanon 
+        ? 'border-energy-yellow/50 bg-energy-yellow/5 hover:border-energy-yellow' 
+        : 'border-red-500/30 bg-red-500/5 hover:border-red-500'}
+    `}
+  >
+    {/* Title */}
+    <h3 className="font-tech text-sm font-bold truncate mb-2">
+      {entry.title}
+    </h3>
+
+    {/* Details */}
+    <div className="space-y-2 mb-3">
+      <div className="flex gap-2 text-xs text-muted-foreground">
+        <span className="font-mono">{entry.year}</span>
+        {entry.eps && (
+          <>
+            <span>•</span>
+            <span>{entry.eps}</span>
+          </>
+        )}
+      </div>
+    </div>
+
+    {/* Canon Badge */}
+    <div className="inline-block">
+      <span className={`text-xs font-mono font-bold px-2 py-1 rounded uppercase tracking-wider ${
+        isCanon 
+          ? 'bg-energy-yellow/20 text-energy-yellow' 
+          : 'bg-red-500/20 text-red-400'
+      }`}>
+        {isCanon ? 'Canon' : 'Non-Canon'}
+      </span>
+    </div>
+  </motion.div>
+);
 
 export default function SeriesWatchOrder() {
   return (
@@ -67,63 +115,52 @@ export default function SeriesWatchOrder() {
         </div>
       </div>
 
-      {/* Watch Order Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {COMPLETE_WATCH_ORDER.map((entry, index) => (
-          <motion.div
-            key={entry.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: index * 0.03 }}
-            className={`
-              p-4 rounded-xl border-2 backdrop-blur-sm transition-all hover:shadow-lg
-              ${entry.canon 
-                ? 'border-energy-yellow/50 bg-energy-yellow/5 hover:border-energy-yellow' 
-                : 'border-red-500/30 bg-red-500/5 hover:border-red-500'}
-            `}
-          >
-            {/* Order Number */}
-            <div className="flex items-start justify-between gap-2 mb-2">
-              <span className="text-xs font-mono text-muted-foreground bg-muted/50 px-2 py-1 rounded">
-                #{entry.id}
-              </span>
-              {entry.canon ? (
-                <CheckCircle className="w-4 h-4 text-energy-yellow shrink-0" />
-              ) : (
-                <AlertCircle className="w-4 h-4 text-red-500 shrink-0" />
-              )}
-            </div>
+      {/* Canon Series Section */}
+      <div className="space-y-4">
+        <h2 className="text-2xl font-tech uppercase text-energy-yellow">
+          Canon Series
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {CANON_SERIES.map((entry) => (
+            <EntryCard key={entry.id} entry={entry} isCanon={true} />
+          ))}
+        </div>
+      </div>
 
-            {/* Title */}
-            <h3 className="font-tech text-sm font-bold truncate mb-2">
-              {entry.title}
-            </h3>
+      {/* Canon Movies Section */}
+      <div className="space-y-4">
+        <h2 className="text-2xl font-tech uppercase text-energy-yellow">
+          Canon Movies
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {CANON_MOVIES.map((entry) => (
+            <EntryCard key={entry.id} entry={entry} isCanon={true} />
+          ))}
+        </div>
+      </div>
 
-            {/* Details */}
-            <div className="space-y-2 mb-3">
-              <div className="flex gap-2 text-xs text-muted-foreground">
-                <span className="font-mono">{entry.type}</span>
-                <span>•</span>
-                <span>{entry.year}</span>
-              </div>
-              <div className="text-xs text-muted-foreground font-mono">
-                {entry.eps}
-              </div>
-            </div>
+      {/* Non-Canon Series Section */}
+      <div className="space-y-4">
+        <h2 className="text-2xl font-tech uppercase text-red-500">
+          Non-Canon Series
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {NON_CANON_SERIES.map((entry) => (
+            <EntryCard key={entry.id} entry={entry} isCanon={false} />
+          ))}
+        </div>
+      </div>
 
-            {/* Canon Badge */}
-            <div className="inline-block">
-              <span className={`text-xs font-mono font-bold px-2 py-1 rounded uppercase tracking-wider ${
-                entry.canon 
-                  ? 'bg-energy-yellow/20 text-energy-yellow' 
-                  : 'bg-red-500/20 text-red-400'
-              }`}>
-                {entry.canon ? 'Canon' : 'Non-Canon'}
-              </span>
-            </div>
-          </motion.div>
-        ))}
+      {/* Non-Canon Movies Section */}
+      <div className="space-y-4">
+        <h2 className="text-2xl font-tech uppercase text-red-500">
+          Non-Canon Movies
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {NON_CANON_MOVIES.map((entry) => (
+            <EntryCard key={entry.id} entry={entry} isCanon={false} />
+          ))}
+        </div>
       </div>
 
       {/* Info Section */}
@@ -131,8 +168,8 @@ export default function SeriesWatchOrder() {
         <h3 className="font-tech text-lg uppercase text-primary">Recommended Watch Order:</h3>
         <div className="space-y-2 text-sm font-ui text-muted-foreground">
           <p><strong>Canon Path (Official Story):</strong> Dragon Ball → Dragon Ball Z → Dragon Ball Daima → Dragon Ball Super</p>
-          <p><strong>Complete Experience:</strong> Follow canon series, watch non-canon movies between arcs for side stories</p>
-          <p><strong>Movies Note:</strong> Most DBZ movies can be watched anytime during that saga. Super movies fit before/after Tournament of Power</p>
+          <p><strong>Complete Experience:</strong> Follow canon series, watch canon movies between arcs, then explore non-canon side stories</p>
+          <p><strong>Bonus Content:</strong> Dragon Ball Heroes and Super Dragon Ball Heroes are web series with alternate storylines</p>
         </div>
       </div>
     </div>
