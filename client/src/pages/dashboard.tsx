@@ -8,9 +8,7 @@ import {
   Users, 
   Gamepad2,
   PenTool,
-  Play,
-  CheckCircle,
-  AlertCircle
+  Play
 } from "lucide-react";
 import techBg from "@assets/generated_images/futuristic_anime_lab_background_texture.png";
 import auraBg from "@assets/generated_images/dragon_ball_style_energy_aura_background.png";
@@ -106,21 +104,21 @@ const SECTIONS = [
     link: "/tribute",
     desc: "A dedication to the legendary creator, Akira Toriyama.",
     image: toriyamaArt
+  },
+  {
+    id: "series",
+    title: "Series Watch Order",
+    subtitle: "Timeline Guide",
+    icon: Play,
+    color: "text-purple-400",
+    bg: "bg-purple-500/10",
+    border: "border-purple-400/30",
+    link: "/series-order",
+    desc: "Complete Dragon Ball timeline with canon and non-canon series + all movies.",
+    image: auraBg
   }
 ];
 
-const WATCH_ORDER = [
-  { id: 1, title: "Dragon Ball", canon: true, type: "Series", year: "1986-1989" },
-  { id: 2, title: "Dragon Ball Z", canon: true, type: "Series", year: "1989-1996" },
-  { id: 3, title: "Dragon Ball Z: The World's Strongest", canon: false, type: "Movie", year: "1990" },
-  { id: 4, title: "Dragon Ball Z: The Dead Zone", canon: false, type: "Movie", year: "1989" },
-  { id: 5, title: "Dragon Ball Z: Broly - The Legendary Super Saiyan", canon: false, type: "Movie", year: "1993" },
-  { id: 6, title: "Dragon Ball Z: Fusion Reborn", canon: false, type: "Movie", year: "1995" },
-  { id: 7, title: "Dragon Ball GT", canon: false, type: "Series", year: "1997-1997" },
-  { id: 8, title: "Dragon Ball Super", canon: true, type: "Series", year: "2015-2017" },
-  { id: 9, title: "Dragon Ball Super: Broly", canon: true, type: "Movie", year: "2018" },
-  { id: 10, title: "Dragon Ball Super: Super Hero", canon: true, type: "Movie", year: "2022" },
-];
 
 const container = {
   hidden: { opacity: 0 },
@@ -214,60 +212,6 @@ export default function Dashboard() {
         ))}
       </motion.div>
 
-      {/* Watch Order Section */}
-      <div className="mt-16 space-y-6">
-        <div className="text-center space-y-2">
-          <h2 className="text-4xl font-tech uppercase text-transparent bg-clip-text bg-gradient-to-r from-energy-yellow to-goku-orange">
-            Series Watch Order
-          </h2>
-          <p className="text-muted-foreground font-ui">Canon and Non-Canon Timeline</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-          {WATCH_ORDER.map((entry, index) => (
-            <motion.div
-              key={entry.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-              className={`
-                p-4 rounded-xl border-2 backdrop-blur-sm transition-all hover:shadow-lg
-                ${entry.canon 
-                  ? 'border-energy-yellow/50 bg-energy-yellow/5 hover:border-energy-yellow' 
-                  : 'border-red-500/30 bg-red-500/5 hover:border-red-500'}
-              `}
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-tech text-sm font-bold truncate">{entry.title}</h3>
-                    {entry.canon ? (
-                      <CheckCircle className="w-4 h-4 text-energy-yellow shrink-0" />
-                    ) : (
-                      <AlertCircle className="w-4 h-4 text-red-500 shrink-0" />
-                    )}
-                  </div>
-                  <div className="flex gap-2 text-xs text-muted-foreground">
-                    <span className="font-mono">{entry.type}</span>
-                    <span>•</span>
-                    <span>{entry.year}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-2 inline-block">
-                <span className={`text-xs font-mono font-bold px-2 py-1 rounded uppercase tracking-wider ${
-                  entry.canon 
-                    ? 'bg-energy-yellow/20 text-energy-yellow' 
-                    : 'bg-red-500/20 text-red-400'
-                }`}>
-                  {entry.canon ? 'Canon' : 'Non-Canon'}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

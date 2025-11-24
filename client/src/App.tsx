@@ -12,6 +12,7 @@ import KiScience from "@/pages/ki-science";
 import UniverseLore from "@/pages/universe-lore";
 import EntertainmentZone from "@/pages/entertainment";
 import Tribute from "@/pages/tribute";
+import SeriesWatchOrder from "@/pages/series-watch-order";
 import NotFound from "@/pages/not-found";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -58,6 +59,7 @@ function Router() {
         <Route path="/lore" component={UniverseLore} />
         <Route path="/fun" component={EntertainmentZone} />
         <Route path="/tribute" component={Tribute} />
+        <Route path="/series-order" component={SeriesWatchOrder} />
         
         <Route path="/meme">
            {/* Removed as per request, redirecting or showing 404 if accessed directly */}
